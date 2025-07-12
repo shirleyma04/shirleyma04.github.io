@@ -1,0 +1,10 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-bar {
+  background: var(--pink);
+  height: 30px;
+}

@@ -1,19 +1,19 @@
 .home-container {
   display: block;
-  max-width: 50vw;
+  max-width: 75vw;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem;
 }
 
 .headshot-container {
   position: relative;
   max-width: 350px;
   float: left;
-  shape-outside: circle(30%);
-  width: 350px;
-  height: 350px;
-  margin-right: 10rem;
-  margin-bottom: 1rem;
+  shape-outside: circle(45%);
+  width: 450px;
+  height: 450px;
+  margin-right: 8rem;
+  margin-bottom: 2rem;
 }
 
 .headshot-bg {
@@ -21,7 +21,7 @@
   top: 20px;
   right: 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   z-index: 1;
 }
 
@@ -39,21 +39,22 @@
   font-family: var(--lora);
   font-weight: var(--fw-light);
   margin-bottom: 0;
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-4xl);
 }
 
 .subtitle {
   font-family: var(--lora);
   color: var(--gray);
   font-weight: var(--fw-light);
-  margin-top: 0;
-  font-size: var(--fs-xl);
+  margin: 0 auto;
+  font-size: var(--fs-2-5xl);
 }
 
 .bio {
   font-family: var(--chivo);
   font-weight: var(--fw-light);
-  font-size: var(--fs-l);
+  font-size: var(--fs-xl);
+  margin: 0.5 auto;
   line-height: 1.5;
 }
 
@@ -62,15 +63,67 @@
   color: var(--pink);
 }
 
+/* HOBBY */
+.hobby-header {
+  font-family: var(--lora);
+  color: var(--pink);
+  font-weight: var(--fw-light);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  font-size: var(--fs-3xl);
+}
+
+.hobby-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+}
+
+.hobby-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hobby-emoji {
+  font-size: var(--fs-5xl);
+  margin-top: 3rem;
+  margin-bottom: 0;
+  color: var(--pink);
+  font-weight: var(--fw-light);
+  font-family: var(--lora);
+}
+
+.hobby-text {
+  font-family: var(--chivo);
+  color: var(--pink);
+  font-size: var(--fs-2xl);
+  margin: 0 auto;
+}
+
+.thanks {
+  font-family: var(--chivo);
+  color: var(--pink);
+  font-weight: var(--fw-light);
+  display: flex;
+  justify-content: center;
+  margin: 6rem;
+  font-size: var(--fs-3xl);
+}
+
+/* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
   .headshot-container {
     float: none;
-    margin: 0 auto 1.5rem auto;
-    display: block;
+    margin: -1rem auto;
     shape-outside: none;
     clip-path: none;
-    width: 300px;
-    height: 300px;
+    width: 80vw;
+    aspect-ratio: 1 / 1;
   }
 
   .name,

@@ -31,6 +31,37 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <div>
+        <h1 className="hobby-header">In my spare time, I also enjoy:</h1>
+        <div className="hobby-row">
+          <div className="hobby-component">
+            <p className="hobby-emoji">📖</p>
+            <p className="hobby-text">Reading</p>
+          </div>
+          <div className="hobby-component">
+            <p className="hobby-emoji">🧶</p>
+            <p className="hobby-text">Crocheting</p>
+          </div>
+          <div className="hobby-component">
+            <p className="hobby-emoji">🎮</p>
+            <p className="hobby-text">Gaming</p>
+          </div>
+        </div>
+        <div className="hobby-row">
+          <div className="hobby-component">
+            <p className="hobby-emoji">🏊‍♀️</p>
+            <p className="hobby-text">Swimming</p>
+          </div>
+          <div className="hobby-component">
+            <p className="hobby-emoji">&</p>
+          </div>
+          <div className="hobby-component">
+            <p className="hobby-emoji">🍪</p>
+            <p className="hobby-text">Baking</p>
+          </div>
+        </div>
+        <h1 className="thanks">Thanks for visiting!</h1>
+      </div>
     </div>
   );
 }

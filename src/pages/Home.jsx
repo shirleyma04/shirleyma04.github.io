@@ -1,6 +1,32 @@
 import React from "react";
+import ExperienceBlock from "../components/ExperienceBlock";
 import { ReactComponent as HeadshotBackground } from "../assets/headshot-background.svg";
 import "./Home.css";
+
+const experienceData = [
+  {
+    title: "Publicis Sapient",
+    projects: [
+      {
+        name: "Mini-Project",
+        description: "Product Information Management System",
+      },
+      { name: "Industry Challenge", description: "Financial Chatbot" },
+    ],
+  },
+  {
+    title: "School Projects",
+    projects: [
+      { name: "Fridge2Fork", description: "Cooking Helper App" },
+      { name: "Language Exchange Website", description: "Built XYZ" },
+      { name: "Zero2One", description: "Task Organization Platform" },
+    ],
+  },
+  {
+    title: "GE Appliances",
+    projects: [{ name: "Coming Soon..." }],
+  },
+];
 
 export default function Home() {
   return (
@@ -30,6 +56,11 @@ export default function Home() {
             projects I have worked on.
           </p>
         </div>
+      </div>
+      <div>
+        {experienceData.map((exp, i) => (
+          <ExperienceBlock key={i} title={exp.title} projects={exp.projects} />
+        ))}
       </div>
       <div>
         <h1 className="hobby-header">In my spare time, I also enjoy:</h1>

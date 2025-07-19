@@ -27,17 +27,17 @@
 }
 
 /* vary layout depending on number of projects */
-.project-count-1 .project-block {
+.project-count-1 .project-card {
   width: 75%;
 }
-.project-count-2 .project-block {
+.project-count-2 .project-card {
   width: 35%;
 }
-.project-count-3 .project-block {
+.project-count-3 .project-card {
   width: 25%;
 }
 
-.project-block {
+.project-card {
   display: flex;
   flex-direction: column;
   border: 1.5px solid var(--pink);
@@ -49,6 +49,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
 
 .project-title {
@@ -60,6 +61,29 @@
   font-size: var(--fs-lg);
   margin-top: 0;
   margin-bottom: 4rem;
+}
+
+.circle-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--pink);
+  font-size: 1.5rem;
+  font-weight: light;
+  border: 2px solid var(--pink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.circle-button:hover {
+  transform: scale(1.1);
 }
 
 /* RESPONSIVE DESIGN */

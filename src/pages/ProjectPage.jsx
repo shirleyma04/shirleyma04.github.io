@@ -1,9 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import projects from "../data/projectData";
+import { ReactComponent as HeartIcon } from "../assets/heart.svg";
+import "./ProjectPage.css";
 
 const ProjectPage = () => {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
+  const navigate = useNavigate();
 
   if (!project) return <div>Project not found</div>;
 
@@ -30,13 +33,23 @@ const ProjectPage = () => {
 
   return (
     <div className="project-page">
-      <h2>{project.experience}</h2>
-      <h1>{project.name}</h1>
+      <button className="back-to-projects" onClick={() => navigate("/")}>
+        {"< "}Back to projects
+      </button>
 
-      <h3>Problem</h3>
+      <div className="project-page-header">
+        <h2 className="project-experience">{project.experience}</h2>
+        <h1 className="project-name">{project.name}</h1>
+      </div>
+
+      <hr className="line-break" />
+      <div className="section-header">
+        <HeartIcon className="heart" />
+        <h2>Project Overview</h2>
+      </div>
+      <h3>Problem Statement</h3>
       <p>{project.problem}</p>
-
-      <h3>Solution</h3>
+      <h3>Provided Solution</h3>
       <p>{project.solution}</p>
 
       <h3>Team</h3>
@@ -55,16 +68,27 @@ const ProjectPage = () => {
           <li key={idx}>{tech}</li>
         ))}
       </ul>
-
-      <h3>Takeaways</h3>
+      <hr className="line-break" />
+      <div className="section-header">
+        <HeartIcon className="heart" />
+        <h2>Product</h2>
+      </div>
+      <hr className="line-break" />
+      <div className="section-header">
+        <HeartIcon className="heart" />
+        <h2>Takeaways</h2>
+      </div>
       {project.takeawayTitles.map((title, idx) => (
         <div key={idx}>
-          <h4>{title}</h4>
+          <h3>{title}</h3>
           <p>
             {highlightText(project.takeaways[idx], project.highlightedWords)}
           </p>
         </div>
       ))}
+      <button className="back-to-projects" onClick={() => navigate("/")}>
+        {"<"} Back to projects
+      </button>
     </div>
   );
 };

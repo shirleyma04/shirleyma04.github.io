@@ -1,0 +1,68 @@
+.project-page {
+  max-width: 75vw;
+  display: block;
+  margin: 0 auto;
+}
+
+.project-page h3,
+.project-page p,
+.project-page ul {
+  font-family: var(--chivo);
+}
+
+.back-to-projects {
+  color: var(--pink);
+  border: 2px solid var(--pink);
+  padding: 1.5rem;
+  font-family: var(--chivo);
+  background: transparent;
+  border-radius: 20px;
+  font-size: var(--fs-xl);
+  cursor: pointer;
+}
+
+.back-to-projects:hover {
+  transform: scale(1.05);
+}
+
+.project-page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-family: var(--lora);
+  font-weight: var(--fw-regular);
+  width: 60%;
+}
+
+.project-experience {
+  margin-bottom: 0.5rem;
+}
+
+.project-name {
+  color: var(--pink);
+  margin-top: 0;
+  text-align: center;
+}
+
+.project-page hr {
+  border: none;
+  border-top: 2px solid var(--pink);
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--pink);
+  font-family: var(--lora);
+  font-weight: var(--fw-light);
+  font-size: var(--fs-lg);
+}
+
+.heart {
+  width: 45px;
+}

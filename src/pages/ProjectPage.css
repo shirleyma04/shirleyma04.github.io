@@ -10,13 +10,35 @@
   font-family: var(--chivo);
 }
 
+.project-page h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-page p,
+.project-page ul {
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+.back-to-projects.top {
+  margin-top: 1.5rem;
+}
+
+.back-to-projects.bottom {
+  margin: 2rem auto 5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .back-to-projects {
   color: var(--pink);
   border: 2px solid var(--pink);
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   font-family: var(--chivo);
+  font-weight: var(--fw-medium);
   background: transparent;
-  border-radius: 20px;
+  border-radius: 20px 5px;
   font-size: var(--fs-xl);
   cursor: pointer;
 }
@@ -37,12 +59,12 @@
 }
 
 .project-experience {
-  margin-bottom: 0.5rem;
+  margin: 0.2rem !important;
 }
 
 .project-name {
   color: var(--pink);
-  margin-top: 0;
+  margin: 0;
   text-align: center;
 }
 
@@ -50,6 +72,10 @@
   border: none;
   border-top: 2px solid var(--pink);
   width: 100%;
+}
+
+.line-break {
+  margin: 1.5rem 0 1rem 0;
 }
 
 .section-header {
@@ -63,6 +89,33 @@
   font-size: var(--fs-lg);
 }
 
+.project-page h2 {
+  margin: 0.5rem;
+}
+
 .heart {
   width: 45px;
+  margin-bottom: 0rem;
+}
+
+.coming-soon {
+  height: 87vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  font-size: var(--fs-4xl);
+  font-family: var(--chivo);
+  color: var(--pink);
+  background-image: url("../assets/coming-soon-bg.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.blur-text {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
 }

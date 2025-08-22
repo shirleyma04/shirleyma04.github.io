@@ -1,6 +1,8 @@
 import React from "react";
 import ExperienceBlock from "../components/ExperienceBlock";
 import { ReactComponent as HeadshotBackground } from "../assets/headshot-background.svg";
+import BlurText from "../animations/BlurText";
+import AnimatedContent from "../animations/AnimatedContent";
 import "./Home.css";
 
 const experienceData = [
@@ -8,10 +10,10 @@ const experienceData = [
     title: "Publicis Sapient",
     projects: [
       {
-        name: "Mini-Project",
-        description: "Product Information Management System",
+        name: "Product Information Management System",
+        description: "Mini-Project",
       },
-      { name: "Industry Challenge", description: "Financial Chatbot" },
+      { name: "Financial Chatbot", description: "Industry Challenge" },
     ],
   },
   {
@@ -32,16 +34,36 @@ export default function Home() {
   return (
     <div>
       <div className="home-container">
-        <div className="headshot-container">
-          <HeadshotBackground className="headshot-bg" />
-          <img
-            className="headshot"
-            src="/headshot-with-shadow.png"
-            alt="Headshot"
-          />
-        </div>
+        <AnimatedContent
+          distance={150}
+          direction="vertical"
+          reverse={true}
+          duration={1.2}
+          ease="power3.out"
+          initialOpacity={0}
+          animateOpacity
+          scale={1}
+          delay={0.3}
+        >
+          <div className="headshot-container">
+            <HeadshotBackground className="headshot-bg" />
+            <img
+              className="headshot"
+              src="/headshot-with-shadow.png"
+              alt="Headshot"
+            />
+          </div>
+        </AnimatedContent>
+
         <div className="home-text-container">
-          <h1 className="name">Shirley Ma</h1>
+          <BlurText
+            className="name"
+            text="Shirley Ma"
+            delay={55}
+            animateBy="letters"
+            direction="top"
+            // onAnimationComplete={handleAnimationComplete}
+          />
           <h2 className="subtitle">Software Engineer & Student</h2>
           <p className="bio">
             Welcome! I'm a{" "}
@@ -57,11 +79,10 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div>
-        {experienceData.map((exp, i) => (
-          <ExperienceBlock key={i} title={exp.title} projects={exp.projects} />
-        ))}
-      </div>
+
+      {experienceData.map((exp, i) => (
+        <ExperienceBlock key={i} title={exp.title} projects={exp.projects} />
+      ))}
       <div>
         <h1 className="hobby-header">In my spare time, I also enjoy:</h1>
         <div className="hobby-row">

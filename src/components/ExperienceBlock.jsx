@@ -1,5 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import SpotlightCard from "../animations/SpotlightCard";
+import ScrollFloat from "../animations/ScrollFloat";
+
 import "./ExperienceBlock.css";
 
 const ExperienceBlock = ({ title, projects }) => {
@@ -13,10 +16,23 @@ const ExperienceBlock = ({ title, projects }) => {
 
   return (
     <div className="experience-block">
-      <h3 className="experience-title">{title}</h3>
+      <ScrollFloat
+        containerClassName="experience-title"
+        animationDuration={1}
+        ease="back.inOut(2)"
+        scrollStart="center bottom+=50%"
+        scrollEnd="bottom bottom-=40%"
+        stagger={0.03}
+      >
+        {title}
+      </ScrollFloat>
       <div className={`project-row project-count-${projects.length}`}>
         {projects.map((project, idx) => (
-          <div key={idx} className="project-card">
+          <SpotlightCard
+            key={idx}
+            className="project-card"
+            spotlightColor="rgba(206, 62, 120, 0.2)"
+          >
             <h3 className="project-title">{project.name}</h3>
             <p className="project-description">{project.description}</p>
             <button
@@ -27,7 +43,7 @@ const ExperienceBlock = ({ title, projects }) => {
             >
               {">"}
             </button>
-          </div>
+          </SpotlightCard>
         ))}
       </div>
     </div>

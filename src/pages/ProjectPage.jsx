@@ -1,14 +1,48 @@
 import { useParams, useNavigate } from "react-router-dom";
 import projects from "../data/projectData";
 import { ReactComponent as HeartIcon } from "../assets/heart.svg";
+import BlurText from "../animations/BlurText";
+import AnimatedContent from "../animations/AnimatedContent";
 import "./ProjectPage.css";
+
+// const handleAnimationComplete = () => {
+//   console.log("Animation completed!");
+// };
 
 const ProjectPage = () => {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
   const navigate = useNavigate();
 
-  if (!project) return <div>Project not found</div>;
+  if (!project)
+    return (
+      <div className="coming-soon">
+        <BlurText
+          className="blur-text"
+          text="Project details coming soon..."
+          delay={55}
+          animateBy="letters"
+          direction="top"
+          // onAnimationComplete={handleAnimationComplete}
+        />
+        <AnimatedContent
+          distance={150}
+          direction="vertical"
+          reverse={true}
+          duration={1.2}
+          ease="power3.out"
+          initialOpacity={0}
+          animateOpacity
+          scale={1}
+          threshold={0.2}
+          delay={0.7}
+        >
+          <button className="back-to-projects" onClick={() => navigate("/")}>
+            {"<"}&nbsp;Back to projects
+          </button>
+        </AnimatedContent>
+      </div>
+    );
 
   // Highlights given keywords in text by wrapping them with <span class="highlight">
   function highlightText(text, keywords) {
@@ -33,8 +67,8 @@ const ProjectPage = () => {
 
   return (
     <div className="project-page">
-      <button className="back-to-projects" onClick={() => navigate("/")}>
-        {"< "}Back to projects
+      <button className="back-to-projects top" onClick={() => navigate("/")}>
+        {"<"}&nbsp;Back to projects
       </button>
 
       <div className="project-page-header">
@@ -82,12 +116,15 @@ const ProjectPage = () => {
         <div key={idx}>
           <h3>{title}</h3>
           <p>
-            {highlightText(project.takeaways[idx], project.highlightedWords)}
+            {highlightText(
+              project.takeaways[idx],
+              project.highlightedWords[idx]
+            )}
           </p>
         </div>
       ))}
-      <button className="back-to-projects" onClick={() => navigate("/")}>
-        {"<"} Back to projects
+      <button className="back-to-projects bottom" onClick={() => navigate("/")}>
+        {"<"}&nbsp;Back to projects
       </button>
     </div>
   );

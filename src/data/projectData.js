@@ -98,7 +98,7 @@ const projects = [
       "Communicating Effectively And Proactively",
     ],
     takeaways: [
-      "While building multiple frontend pages with repetitive functionality, I noticed a lot of duplicated code. I refactored it into modular, reusable components, improving efficiency, readability, and maintainability.",
+      "While building multiple frontend pages with repetitive functionality, I noticed a lot of duplicated code. I refactored it into modular, reusable components, improving efficiency, readability, and maintainability. This helped my team and I work with my code more easily.",
       "During this project, I faced challenges with a teammate who was uncommunicative and not contributing equally. Instead of leaving the issue unresolved, I took a proactive approach—first trying to address it directly, and then ultimately escalating to our mentor when it continued to impact progress. It reinforced the importance of accountability, communication, and early conflict resolution in collaborative work.",
     ],
     highlightedWords: [
@@ -130,26 +130,22 @@ const projects = [
       "Knowing What I Don't Know",
     ],
     takeaways: [
-      "While building multiple frontend pages with repetitive functionality, I noticed a lot of duplicated code. I refactored it into modular, reusable components, improving efficiency, readability, and maintainability.",
-      "During this project, I faced challenges with a teammate who was uncommunicative and not contributing equally. Instead of leaving the issue unresolved, I took a proactive approach—first trying to address it directly, and then ultimately escalating to our mentor when it continued to impact progress. It reinforced the importance of accountability, communication, and early conflict resolution in collaborative work.",
+      "With this important leadership role, I ran weekly meetings and mid-week check-ins to keep my underclassmen team on track. I empowered them to fulfill their responsibilities, gained experience verbalizing my own code, and led with understanding when school obligations arose. When a member stepped away due to lack of commitment, I quickly realigned responsibilities to keep the team moving forward productively.",
+      "In my team, I always maintained an honest and supportive culture. Even though I was the leader, I could recognize that a team member had more backend expertise and I let him lead with the technologies and backend workflow he was comfortable with. By recognizing my limits and trusting my team, we worked more effectively and built stronger collaboration.",
     ],
     highlightedWords: [
       [
-        "friendly financial assistant",
-        "guides non-expert users",
-        "share progress effectively",
-        "keep my work organized and transparent",
+        "weekly meetings and mid-week check-ins",
+        "empowered them to fulfill their responsibilities",
+        "verbalizing my own code",
+        "led with understanding",
+        "quickly realigned responsibilities",
       ],
       [
-        "deliver the greatest value",
-        "adjusted priorities",
-        "strong final product",
-      ],
-      [
-        "frequent feedback",
-        "opportunities to improve",
-        "motivation to grow",
-        "significant progress",
+        "honest and supportive culture",
+        "recognizing my limits",
+        "trusting my team",
+        "built stronger collaboration",
       ],
     ],
   },

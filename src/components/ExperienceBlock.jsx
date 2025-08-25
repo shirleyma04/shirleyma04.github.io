@@ -32,6 +32,12 @@ const ExperienceBlock = ({ title, projects }) => {
             key={idx}
             className="project-card"
             spotlightColor="rgba(206, 62, 120, 0.2)"
+            style={{
+              backgroundImage: project.image ? `url(${project.image})` : "none",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
           >
             <h3 className="project-title">{project.name}</h3>
             <p className="project-description">{project.description}</p>

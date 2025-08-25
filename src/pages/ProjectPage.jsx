@@ -5,10 +5,6 @@ import BlurText from "../animations/BlurText";
 import AnimatedContent from "../animations/AnimatedContent";
 import "./ProjectPage.css";
 
-// const handleAnimationComplete = () => {
-//   console.log("Animation completed!");
-// };
-
 const ProjectPage = () => {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
@@ -67,13 +63,19 @@ const ProjectPage = () => {
 
   return (
     <div className="project-page">
-      <button className="back-to-projects top" onClick={() => navigate("/")}>
-        {"<"}&nbsp;Back to projects
-      </button>
-
       <div className="project-page-header">
-        <h2 className="project-experience">{project.experience}</h2>
-        <h1 className="project-name">{project.name}</h1>
+        <button
+          className="circle-back-button"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          {"<"}
+        </button>
+        <div className="project-page-header-text">
+          <h2 className="project-experience">{project.experience}</h2>
+          <h1 className="project-name">{project.name}</h1>
+        </div>
       </div>
 
       <hr className="line-break" />

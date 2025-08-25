@@ -4,7 +4,10 @@ import { ReactComponent as HeadshotBackground } from "../assets/headshot-backgro
 import BlurText from "../animations/BlurText";
 import AnimatedContent from "../animations/AnimatedContent";
 import Iridescence from "../animations/Iridescence";
-
+import miniProjectImg from "../assets/Mini-Project/StartScreen.png";
+import finnImg from "../assets/Finn/OLGAXInvestingSteps.png";
+import fridge2ForkImg from "../assets/Fridge2Fork/StartScreen.png";
+import languageExchangeImg from "../assets/UIUCLanguageExchange/StartScreen.png";
 import "./Home.css";
 
 const experienceData = [
@@ -14,26 +17,27 @@ const experienceData = [
       {
         name: "Mini-Project",
         description: "Product Information Management System",
+        image: miniProjectImg,
       },
-      { name: "Finn", description: "AI Financial Assistant" },
-    ],
-  },
-  {
-    title: "24/7 Teach",
-    projects: [
       {
-        name: "Naomi",
-        description: "AI Tutor and Guidance Counselor ",
+        name: "Finn",
+        description: "AI Financial Assistant",
+        image: finnImg,
       },
     ],
   },
   {
     title: "School Projects",
     projects: [
-      { name: "Fridge2Fork", description: "Cooking Assistant" },
+      {
+        name: "Fridge2Fork",
+        description: "Cooking Assistant",
+        image: fridge2ForkImg,
+      },
       {
         name: "UIUC Language Exchange",
         description: "Language Partner Matching",
+        image: languageExchangeImg,
       },
     ],
   },
@@ -43,6 +47,7 @@ const experienceData = [
       {
         name: "Data Governance & Master Data Management",
         description: "Coming Soon...",
+        image: null,
       },
     ],
   },

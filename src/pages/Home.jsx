@@ -3,6 +3,8 @@ import ExperienceBlock from "../components/ExperienceBlock";
 import { ReactComponent as HeadshotBackground } from "../assets/headshot-background.svg";
 import BlurText from "../animations/BlurText";
 import AnimatedContent from "../animations/AnimatedContent";
+import Iridescence from "../animations/Iridescence";
+
 import "./Home.css";
 
 const experienceData = [
@@ -10,23 +12,39 @@ const experienceData = [
     title: "Publicis Sapient",
     projects: [
       {
-        name: "Product Information Management System",
-        description: "Mini-Project",
+        name: "Mini-Project",
+        description: "Product Information Management System",
       },
-      { name: "Financial Chatbot", description: "Industry Challenge" },
+      { name: "Finn", description: "AI Financial Assistant" },
+    ],
+  },
+  {
+    title: "24/7 Teach",
+    projects: [
+      {
+        name: "Naomi",
+        description: "AI Tutor and Guidance Counselor ",
+      },
     ],
   },
   {
     title: "School Projects",
     projects: [
-      { name: "Fridge2Fork", description: "Cooking Helper App" },
-      { name: "Language Exchange Website", description: "Built XYZ" },
-      { name: "Zero2One", description: "Task Organization Platform" },
+      { name: "Fridge2Fork", description: "Cooking Assistant" },
+      {
+        name: "UIUC Language Exchange",
+        description: "Language Partner Matching",
+      },
     ],
   },
   {
     title: "GE Appliances",
-    projects: [{ name: "Coming Soon..." }],
+    projects: [
+      {
+        name: "Data Governance & Master Data Management",
+        description: "Coming Soon...",
+      },
+    ],
   },
 ];
 

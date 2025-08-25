@@ -1,6 +1,6 @@
 const projects = [
   {
-    slug: "product-information-management-system",
+    slug: "mini-project",
     experience: "Publicis Sapient",
     name: "Product Information Management System",
     problem:
@@ -34,16 +34,24 @@ const projects = [
     ],
   },
   {
-    slug: "financial-chatbot",
+    slug: "finn",
     experience: "Publicis Sapient",
-    name: "Financial Chatbot",
+    name: "Finn AI Financial Assistant",
     problem:
       "Increase the amount of non-expert investors to begin investing with our client.",
     solution:
       "A friendly financial assistant, Finn, that guides non-expert users through intimidating financial concepts, increasing trust and confidence to begin investing.",
     team: ["5 Engineering Interns", "1 Product Management Intern"],
     timeline: "6 weeks",
-    tech: ["React", "Python", "Flask", "Firebase", "Azure", "LangChain"],
+    tech: [
+      "React",
+      "Python",
+      "Flask",
+      "Firebase",
+      "Azure",
+      "LangChain",
+      "TradingView Widgets",
+    ],
     takeawayTitles: [
       "Working in an Agile Environment",
       "Balancing Business Priorities",
@@ -53,6 +61,77 @@ const projects = [
       "This was my first exposure to a structured Agile process with weekly sprints. I learned how to share progress effectively in daily standups and gained hands-on experience using Jira and GitHub to keep my work organized and transparent.",
       "Our team had complete ownership of how we implemented and interpreted the client brief. While our initial plans were ambitious, we focused on the features that would deliver the greatest value. When the client introduced a mid-project pivot, we quickly adjusted priorities and concentrated on what mattered most, ultimately delivering a strong final product.",
       "I collaborated closely with engineering and product coaches and received frequent feedback on my work. Rather than being discouraged by critiques, I treated them as opportunities to improve and used them as motivation to grow, making significant progress in a short timeframe.",
+    ],
+    highlightedWords: [
+      [
+        "friendly financial assistant",
+        "guides non-expert users",
+        "share progress effectively",
+        "keep my work organized and transparent",
+      ],
+      [
+        "deliver the greatest value",
+        "adjusted priorities",
+        "strong final product",
+      ],
+      [
+        "frequent feedback",
+        "opportunities to improve",
+        "motivation to grow",
+        "significant progress",
+      ],
+    ],
+  },
+  {
+    slug: "fridge2fork",
+    experience: "Cooking Assistant",
+    name: "Fridge2Fork",
+    problem:
+      "Many students struggle with cooking meals when faced with a random mix of ingredients in their fridge.",
+    solution:
+      "A simple, student-friendly cooking app that suggests tasty, practical recipes based on the ingredients they already have on hand.",
+    team: ["4 Engineering Students"],
+    timeline: "3 months",
+    tech: ["Swift", "Python", "Flask", "Django", "SQLite", "TheMealDB"],
+    takeawayTitles: [
+      "Developing With Modular Design",
+      "Communicating Effectively And Proactively",
+    ],
+    takeaways: [
+      "While building multiple frontend pages with repetitive functionality, I noticed a lot of duplicated code. I refactored it into modular, reusable components, improving efficiency, readability, and maintainability.",
+      "During this project, I faced challenges with a teammate who was uncommunicative and not contributing equally. Instead of leaving the issue unresolved, I took a proactive approach—first trying to address it directly, and then ultimately escalating to our mentor when it continued to impact progress. It reinforced the importance of accountability, communication, and early conflict resolution in collaborative work.",
+    ],
+    highlightedWords: [
+      [
+        "repetitive functionality",
+        "modular, reusable components",
+        "efficiency, readability, and maintainability",
+      ],
+      [
+        "challenges with a teammate ",
+        "proactive approach",
+        "accountability, communication, and early conflict resolution",
+      ],
+    ],
+  },
+  {
+    slug: "uiuc-language-exchange",
+    experience: "Language Partner Matching",
+    name: "UIUC Language Exchange",
+    problem:
+      "International and American-born UIUC students lack a dedicated way to find language exchange partners on campus and bridge the gap between their different cultural groups.",
+    solution:
+      "A verified platform that matches users by target languages and hobbies, enabling cultural exchange through their preferred method(s) of communication.",
+    team: ["5 Engineering Students"],
+    timeline: "3 months",
+    tech: ["React", "Javascript", "Azure", "SQL"],
+    takeawayTitles: [
+      "Leading With Communication And Understanding",
+      "Knowing What I Don't Know",
+    ],
+    takeaways: [
+      "While building multiple frontend pages with repetitive functionality, I noticed a lot of duplicated code. I refactored it into modular, reusable components, improving efficiency, readability, and maintainability.",
+      "During this project, I faced challenges with a teammate who was uncommunicative and not contributing equally. Instead of leaving the issue unresolved, I took a proactive approach—first trying to address it directly, and then ultimately escalating to our mentor when it continued to impact progress. It reinforced the importance of accountability, communication, and early conflict resolution in collaborative work.",
     ],
     highlightedWords: [
       [

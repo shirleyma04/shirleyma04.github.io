@@ -109,6 +109,36 @@ const ProjectPage = () => {
         <HeartIcon className="heart" />
         <h2>Product</h2>
       </div>
+
+      <div className="media-grid">
+        {project.media.map((item, idx) =>
+          item.src.endsWith(".mp4") ? (
+            <video
+              key={idx}
+              src={item.src}
+              autoPlay
+              loop
+              playsInlines
+              controls
+              className={`media-item ${
+                item.type === "phone" ? "phone-media" : "web-media"
+              }`}
+            >
+              <source src={item.src} type="video/mp4" />
+              Your browser does not support this video.
+            </video>
+          ) : (
+            <img
+              key={idx}
+              src={item.src}
+              alt={`Project media ${idx + 1}`}
+              className={`media-item ${
+                item.type === "phone" ? "phone-media" : "web-media"
+              }`}
+            />
+          )
+        )}
+      </div>
       <hr className="line-break" />
       <div className="section-header">
         <HeartIcon className="heart" />

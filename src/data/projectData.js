@@ -1,3 +1,29 @@
+import miniProjStartScreen from "../assets/Mini-Project/StartScreen.png";
+import bulkEnhancement from "../assets/Mini-Project/BulkEnhancements.png";
+import enhancement from "../assets/Mini-Project/Enhancement.mp4";
+import greenSearch from "../assets/Mini-Project/GreenSearch.png";
+
+import askFinn from "../assets/Finn/AskFinn.mp4";
+import profileQuiz from "../assets/Finn/ProfileQuiz.mp4";
+import definitions from "../assets/Finn/Definitions.png";
+import finnMath from "../assets/Finn/FinnMath.png";
+import listChartInvestments from "../assets/Finn/ListChartInvestments.mp4";
+import widgets from "../assets/Finn/Widgets.mp4";
+
+import fridgeStartScreen from "../assets/Fridge2Fork/StartScreen.png";
+import createAccount from "../assets/Fridge2Fork/CreateAccount.png";
+import welcomeScreen from "../assets/Fridge2Fork/WelcomeScreen.png";
+import startCooking from "../assets/Fridge2Fork/StartCooking.png";
+import editFridge from "../assets/Fridge2Fork/EditFridge.png";
+import savedRecipes from "../assets/Fridge2Fork/SavedRecipes.png";
+import groceryList from "../assets/Fridge2Fork/GroceryList.png";
+import cookingPreferences from "../assets/Fridge2Fork/CookingPreferences.png";
+
+import uiucLanguageStartScreen from "../assets/UIUCLanguageExchange/StartScreen.png";
+import uiucAuthenticatedLogin from "../assets/UIUCLanguageExchange/UIUCAuthenticatedLogin.png";
+import editProfile from "../assets/UIUCLanguageExchange/EditProfile.png";
+import matches from "../assets/UIUCLanguageExchange/Matches.png";
+
 const projects = [
   {
     slug: "mini-project",
@@ -31,6 +57,12 @@ const projects = [
         "SOLID principles",
         "non-functional requirements",
       ],
+    ],
+    media: [
+      { src: miniProjStartScreen, type: "web" },
+      { src: bulkEnhancement, type: "web" },
+      { src: enhancement, type: "web" },
+      { src: greenSearch, type: "web" },
     ],
   },
   {
@@ -81,6 +113,14 @@ const projects = [
         "significant progress",
       ],
     ],
+    media: [
+      { src: askFinn, type: "web" },
+      { src: profileQuiz, type: "web" },
+      { src: definitions, type: "web" },
+      { src: finnMath, type: "web" },
+      { src: listChartInvestments, type: "web" },
+      { src: widgets, type: "web" },
+    ],
   },
   {
     slug: "fridge2fork",
@@ -112,6 +152,16 @@ const projects = [
         "proactive approach",
         "accountability, communication, and early conflict resolution",
       ],
+    ],
+    media: [
+      { src: fridgeStartScreen, type: "phone" },
+      { src: createAccount, type: "phone" },
+      { src: welcomeScreen, type: "phone" },
+      { src: startCooking, type: "phone" },
+      { src: editFridge, type: "phone" },
+      { src: savedRecipes, type: "phone" },
+      { src: groceryList, type: "phone" },
+      { src: cookingPreferences, type: "phone" },
     ],
   },
   {
@@ -147,6 +197,12 @@ const projects = [
         "trusting my team",
         "built stronger collaboration",
       ],
+    ],
+    media: [
+      { src: uiucLanguageStartScreen, type: "web" },
+      { src: uiucAuthenticatedLogin, type: "web" },
+      { src: editProfile, type: "web" },
+      { src: matches, type: "web" },
     ],
   },
 ];

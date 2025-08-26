@@ -28,28 +28,34 @@ const ExperienceBlock = ({ title, projects }) => {
       </ScrollFloat>
       <div className={`project-row project-count-${projects.length}`}>
         {projects.map((project, idx) => (
-          <SpotlightCard
+          <div
             key={idx}
             className="project-card"
-            spotlightColor="rgba(206, 62, 120, 0.2)"
             style={{
-              backgroundImage: project.image ? `url(${project.image})` : "none",
+              backgroundImage: project.image
+                ? `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${project.image})`
+                : "none",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
           >
-            <h3 className="project-title">{project.name}</h3>
-            <p className="project-description">{project.description}</p>
-            <button
-              className="circle-button"
-              onClick={() => {
-                navigate(`/projects/${slugify(project.name)}`);
-              }}
+            <SpotlightCard
+              className="spotlight-overlay"
+              spotlightColor="rgba(206, 62, 120, 0.2)"
             >
-              {">"}
-            </button>
-          </SpotlightCard>
+              <h3 className="project-title">{project.name}</h3>
+              <p className="project-description">{project.description}</p>
+              <button
+                className="circle-button"
+                onClick={() => {
+                  navigate(`/projects/${slugify(project.name)}`);
+                }}
+              >
+                {">"}
+              </button>
+            </SpotlightCard>
+          </div>
         ))}
       </div>
     </div>

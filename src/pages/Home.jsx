@@ -79,14 +79,15 @@ export default function Home() {
         </AnimatedContent>
 
         <div className="home-text-container">
-          <BlurText
-            className="name"
-            text="Shirley Ma"
-            delay={55}
-            animateBy="letters"
-            direction="top"
-            // onAnimationComplete={handleAnimationComplete}
-          />
+          <h1 className="name">
+            <BlurText
+              className="name"
+              text="Shirley Ma"
+              delay={55}
+              animateBy="letters"
+              direction="top"
+            />
+          </h1>
           <h2 className="subtitle">Software Engineer & Student</h2>
           <p className="bio">
             Welcome! I'm a{" "}
@@ -94,11 +95,12 @@ export default function Home() {
               Computer Science + Advertising
             </strong>{" "}
             major at the University of Illinois at Urbana-Champaign, graduating
-            in May 2026. I’m passionate about combining technology and
-            creativity to craft{" "}
-            <strong className="bold-text">accessible designs</strong> and bring
-            ideas to life through creative coding. Below are some of the
-            projects I have worked on.
+            in May 2026. I’m passionate about{" "}
+            <strong className="bold-text">
+              combining technology and creativity
+            </strong>{" "}
+            to craft accessible designs and bring ideas to life through creative
+            coding. Below are some of the projects I have worked on.
           </p>
         </div>
       </div>

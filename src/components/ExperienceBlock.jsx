@@ -15,17 +15,15 @@ const ExperienceBlock = ({ title, projects }) => {
       .replace(/^-|-$/g, "");
 
   return (
-    <div className="experience-block">
-      <ScrollFloat
-        containerClassName="experience-title"
-        animationDuration={1}
-        ease="back.inOut(2)"
-        scrollStart="center bottom+=50%"
-        scrollEnd="bottom bottom-=40%"
-        stagger={0.03}
-      >
-        {title}
-      </ScrollFloat>
+    <ScrollFloat
+      containerClassName="experience-block"
+      animationDuration={1}
+      ease="back.inOut(2)"
+      scrollStart="center bottom+=50%"
+      scrollEnd="bottom bottom-=40%"
+      stagger={0.03}
+    >
+      <div className="experience-title">{title}</div>
       <div className={`project-row project-count-${projects.length}`}>
         {projects.map((project, idx) => (
           <div
@@ -58,7 +56,7 @@ const ExperienceBlock = ({ title, projects }) => {
           </div>
         ))}
       </div>
-    </div>
+    </ScrollFloat>
   );
 };
 

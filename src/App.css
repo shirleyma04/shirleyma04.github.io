@@ -14,3 +14,15 @@ body {
 .page-content {
   flex: 1;
 }
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  transform: rotate(180deg);
+  background: var(--gradient);
+  transition: background 0.3s ease;
+}

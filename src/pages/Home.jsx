@@ -3,7 +3,6 @@ import ExperienceBlock from "../components/ExperienceBlock";
 import { ReactComponent as HeadshotBackground } from "../assets/headshot-background.svg";
 import BlurText from "../animations/BlurText";
 import AnimatedContent from "../animations/AnimatedContent";
-import Iridescence from "../animations/Iridescence";
 import miniProjectImg from "../assets/Mini-Project/StartScreen.png";
 import finnImg from "../assets/Finn/OLGAXInvestingSteps.png";
 import fridge2ForkImg from "../assets/Fridge2Fork/StartScreen.png";
@@ -57,57 +56,66 @@ export default function Home() {
   return (
     <div>
       <div className="home-container">
-        <AnimatedContent
-          distance={150}
-          direction="vertical"
-          reverse={true}
-          duration={1.2}
-          ease="power3.out"
-          initialOpacity={0}
-          animateOpacity
-          scale={1}
-          delay={0.3}
-        >
-          <div className="headshot-container">
-            <HeadshotBackground className="headshot-bg" />
-            <img
-              className="headshot"
-              src="/headshot-with-shadow.png"
-              alt="Headshot"
-            />
+        <div className="home-top">
+          <AnimatedContent
+            distance={150}
+            direction="vertical"
+            reverse={true}
+            duration={1.2}
+            ease="power3.out"
+            initialOpacity={0}
+            animateOpacity
+            scale={1}
+            delay={0.3}
+          >
+            <div className="headshot-container">
+              <HeadshotBackground className="headshot-bg" />
+              <img
+                className="headshot"
+                src="/headshot-with-shadow.png"
+                alt="Headshot"
+              />
+            </div>
+          </AnimatedContent>
+          <div className="home-text-container">
+            <h1 className="name">
+              <BlurText
+                className="name"
+                text="Shirley Ma"
+                delay={55}
+                animateBy="letters"
+                direction="top"
+              />
+            </h1>
+            <h2 className="subtitle">Software Engineer & Student</h2>
+            <p className="bio">
+              Hi there! I'm a{" "}
+              <strong className="bold-text">
+                Computer Science + Advertising
+              </strong>{" "}
+              major at the University of Illinois at Urbana-Champaign,
+              graduating in May 2026. I’m passionate about{" "}
+              <strong className="bold-text">
+                combining technology and creativity
+              </strong>{" "}
+              to design accessible solutions and and turn ideas into reality.
+            </p>
           </div>
-        </AnimatedContent>
-
-        <div className="home-text-container">
-          <h1 className="name">
-            <BlurText
-              className="name"
-              text="Shirley Ma"
-              delay={55}
-              animateBy="letters"
-              direction="top"
-            />
-          </h1>
-          <h2 className="subtitle">Software Engineer & Student</h2>
-          <p className="bio">
-            Welcome! I'm a{" "}
-            <strong className="bold-text">
-              Computer Science + Advertising
-            </strong>{" "}
-            major at the University of Illinois at Urbana-Champaign, graduating
-            in May 2026. I’m passionate about{" "}
-            <strong className="bold-text">
-              combining technology and creativity
-            </strong>{" "}
-            to craft accessible designs and bring ideas to life through creative
-            coding. Below are some of the projects I have worked on.
-          </p>
+          <div
+            className="scroll-indicator"
+            onClick={() =>
+              window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+            }
+          >
+            ⬇ View projects ⬇
+          </div>
         </div>
       </div>
 
       {experienceData.map((exp, i) => (
         <ExperienceBlock key={i} title={exp.title} projects={exp.projects} />
       ))}
+
       <div>
         <h1 className="hobby-header">In my spare time, I also enjoy:</h1>
         <div className="hobby-row">

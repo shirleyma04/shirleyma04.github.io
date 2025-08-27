@@ -12,7 +12,7 @@
   color: var(--pink);
   text-align: center;
   margin-bottom: 1rem;
-  margin-top: 2.5rem;
+  margin-top: 0;
 }
 
 .project-row {
@@ -22,7 +22,7 @@
   gap: 2rem;
   width: 100%;
   height: 100%;
-  margin-bottom: 0;
+  margin-bottom: 2.5rem;
 }
 
 /* vary layout depending on number of projects */
@@ -67,6 +67,7 @@
 
 .project-title {
   font-size: var(--fs-xl);
+  color: black;
   font-weight: var(--fw-semibold);
   position: relative;
   z-index: 3;
@@ -77,6 +78,7 @@
 .project-description {
   font-size: var(--fs-lg);
   margin-top: 0;
+  color: black;
   margin-bottom: 4rem;
   position: relative;
   z-index: 3;
@@ -91,7 +93,7 @@
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background-color: white;
+  background-color: transparent;
   color: var(--pink);
   font-size: 1.5rem;
   font-weight: light;
@@ -107,7 +109,7 @@
 .circle-button:hover {
   transform: scale(1.1);
   background-color: var(--pink);
-  color: white;
+  color: var(--white);
 }
 
 /* MEDIA QUERIES */

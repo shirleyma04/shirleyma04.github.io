@@ -28,4 +28,21 @@
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
+
+  /* Background */
+  --gradient: radial-gradient(
+    60% 120% at 50% 50%,
+    hsla(0, 0%, 100%, 0) 0%,
+    rgba(247, 215, 237, 0.877) 100%
+  );
+}
+
+[data-theme="dark"] {
+  --pink: #d64e84;
+  --white: #000000;
+  --maroon: #ce3e78;
+  --black: #ffffff;
+  --gray: #d3d3d3;
+
+  --gradient: radial-gradient(60% 120% at 50% 50%, #1d1d1d 0%, #421b2b 100%);
 }

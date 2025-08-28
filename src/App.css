@@ -4,6 +4,8 @@ body {
   padding: 0;
   height: 100%;
   cursor: var(--cursor-pointer);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .inherit-cursor {

@@ -102,13 +102,8 @@ export default function Home() {
               to design accessible solutions and turn ideas into reality.
             </p>
           </div>
-          <div
-            className="scroll-indicator inherit-cursor"
-            onClick={() =>
-              window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-            }
-          >
-            ⬇ View projects ⬇
+          <div className="scroll-indicator">
+            &darr;&nbsp;&nbsp;View projects&nbsp;&darr;
           </div>
         </div>
       </div>

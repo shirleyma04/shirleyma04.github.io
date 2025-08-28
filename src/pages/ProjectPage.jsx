@@ -34,11 +34,11 @@ const ProjectPage = () => {
           delay={0.7}
         >
           <button
-            className="back-to-projects inherit-cursor"
+            className="back-button inherit-cursor"
             onClick={() => navigate("/")}
             aria-label="Back to projects"
           >
-            {"<"}&nbsp;Back to projects
+            &larr;&nbsp;Back to projects
           </button>
         </AnimatedContent>
       </div>
@@ -68,7 +68,7 @@ const ProjectPage = () => {
       <nav className="toc">
         <h3 className="toc-title">Table Of Contents</h3>
         <hr className="line-decoration" />
-        <ul>
+        <ul className="list">
           <li>
             <a className="toc-link inherit-cursor" href="#overview">
               Project Overview
@@ -87,16 +87,23 @@ const ProjectPage = () => {
         </ul>
         <hr className="line-decoration" />
         <button
-          className="back-button inherit-cursor"
+          className="back-button toc inherit-cursor"
           aria-label="Back to projects"
           onClick={() => navigate("/")}
         >
-          <span aria-hidden="true">←</span>&nbsp;Back to Projects
+          &larr;&nbsp;Back to Projects
         </button>
       </nav>
 
       {/* Main content */}
       <div className="project-page">
+        <button
+          className="back-button mobile inherit-cursor"
+          aria-label="Back to projects"
+          onClick={() => navigate("/")}
+        >
+          ← Back to Projects
+        </button>
         <div className="project-page-header">
           <div className="project-page-header-text">
             <h2 className="project-experience">{project.experience}</h2>
@@ -109,23 +116,23 @@ const ProjectPage = () => {
           <HeartIcon className="heart" />
           <h2>Project Overview</h2>
         </div>
-        <h3>Problem Statement</h3>
-        <p>{project.problem}</p>
-        <h3>Provided Solution</h3>
-        <p>{project.solution}</p>
+        <h3 className="text-header">Problem Statement</h3>
+        <p className="text">{project.problem}</p>
+        <h3 className="text-header">Provided Solution</h3>
+        <p className="text">{project.solution}</p>
 
-        <h3>Team</h3>
-        <ul>
+        <h3 className="text-header">Team</h3>
+        <ul className="list">
           {project.team.map((member, idx) => (
             <li key={idx}>{member}</li>
           ))}
         </ul>
 
-        <h3>Timeline</h3>
-        <p>{project.timeline}</p>
+        <h3 className="text-header">Timeline</h3>
+        <p className="text">{project.timeline}</p>
 
-        <h3>Technologies</h3>
-        <ul>
+        <h3 className="text-header">Technologies</h3>
+        <ul className="list">
           {project.tech.map((tech, idx) => (
             <li key={idx}>{tech}</li>
           ))}
@@ -175,8 +182,8 @@ const ProjectPage = () => {
         </div>
         {project.takeawayTitles.map((title, idx) => (
           <div key={idx}>
-            <h3>{title}</h3>
-            <p>
+            <h3 className="text-header">{title}</h3>
+            <p className="text">
               {highlightText(
                 project.takeaways[idx],
                 project.highlightedWords[idx]
@@ -184,6 +191,13 @@ const ProjectPage = () => {
             </p>
           </div>
         ))}
+        <button
+          className="back-button mobile inherit-cursor"
+          aria-label="Back to projects"
+          onClick={() => navigate("/")}
+        >
+          ← Back to Projects
+        </button>
       </div>
     </div>
   );

@@ -15,7 +15,7 @@
 .toc {
   flex: 0 0 220px;
   position: sticky;
-  top: 40%;
+  top: 7%;
   align-self: flex-start;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@
 .back-button {
   background: none;
   border: none;
-  font-size: var(--fs-md);
+  font-size: clamp(var(--fs-xs), 1.5rem, var(--fs-2xl));
   font-family: var(--chivo);
   transition: color 0.3s, transform 0.2s;
   color: var(--pink);
@@ -69,6 +69,14 @@
   transform: translateX(5px);
 }
 
+.back-button.toc {
+  font-size: clamp(var(--fs-sm), 1rem, var(--fs-xl)) !important;
+}
+
+.back-button.mobile {
+  display: none;
+}
+
 .project-page {
   display: block;
   margin-right: 2rem;
@@ -76,22 +84,28 @@
   padding-bottom: 2rem;
 }
 
-.project-page h3,
-.project-page p,
-.project-page ul {
+.text-header {
   font-family: var(--chivo);
-}
-
-.project-page h3 {
   margin-bottom: 0.5rem;
   color: var(--black);
+  font-size: clamp(var(--fs-md), 1.7vw, var(--fs-lg));
 }
 
-.project-page p,
-.project-page ul {
+.text {
+  font-family: var(--chivo);
   margin-top: 0;
   line-height: 1.5;
   color: var(--black);
+  font-size: clamp(var(--fs-sm), 1.5vw, var(--fs-md));
+  text-indent: 1rem;
+}
+
+.list {
+  font-family: var(--chivo);
+  margin-top: 0;
+  line-height: 1.5;
+  color: var(--black);
+  font-size: clamp(var(--fs-sm), 1.5vw, var(--fs-md));
 }
 
 .highlight {
@@ -153,16 +167,18 @@
 .project-experience {
   color: var(--black);
   margin: 0.2rem !important;
+  font-size: clamp(var(--fs-xl), 1rem, var(--fs-3xl));
 }
 
 .project-name {
   color: var(--pink);
   margin: 0;
   text-align: center;
+  font-size: clamp(var(--fs-2xl), 1.2rem, var(--fs-5xl));
 }
 
 .line-break {
-  margin: 1.5rem 0 1rem 0;
+  margin: 1.5rem 0 0.2rem 0;
   border: none;
   border-top: 2px solid var(--pink);
   width: 100%;
@@ -172,21 +188,21 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
   color: var(--pink);
   font-family: var(--lora);
   font-weight: var(--fw-light);
-  font-size: clamp(var(--fs-sm), 4vw, var(--fs-lg));
-}
-
-.project-page h2 {
-  margin: 0.5rem;
-  color: var(--black);
+  font-size: clamp(var(--fs-md), 4vw, var(--fs-lg));
+  margin: 1.1rem 0 1.3rem 0;
 }
 
 .heart {
-  width: 45px;
-  margin-bottom: 0rem;
+  width: 2.4rem;
+  margin-bottom: 0;
+}
+
+.section-header h2 {
+  margin: 0;
 }
 
 .coming-soon {
@@ -200,7 +216,7 @@
   justify-content: center;
   align-items: center;
   gap: 0;
-  font-size: clamp(var(--fs-3xl), 5vw, var(--fs-4xl));
+  font-size: clamp(var(--fs-2xl), 5vw, var(--fs-4xl));
   font-family: var(--chivo);
   color: var(--pink);
   background-image: url("../assets/coming-soon-bg.gif");
@@ -213,24 +229,8 @@
   margin: 0 0 1.5rem 0;
   padding: 0;
   justify-content: center;
-}
-
-.back-to-projects {
-  color: var(--pink);
-  border: 2px solid var(--pink);
-  padding: 1rem 1.5rem;
-  font-family: var(--chivo);
-  font-weight: var(--fw-medium);
-  background: transparent;
-  border-radius: 20px 5px;
-  font-size: var(--fs-xl);
-  transition: transform 0.2s ease;
-}
-
-.back-to-projects:hover {
-  transform: scale(1.05);
-  background-color: var(--pink);
-  color: var(--white);
+  width: 90vw;
+  word-break: break-word;
 }
 
 /* MEDIA QUERIES */
@@ -238,13 +238,18 @@
   .project-page-container {
     flex-direction: column;
     padding: 1rem;
+    margin: 0 auto;
   }
 
   .toc {
-    position: relative;
-    flex: unset;
-    width: 100%;
-    top: unset;
+    display: none; /* hide entire TOC */
+  }
+
+  .back-button.mobile {
+    display: flex;
+    padding: 0;
+    margin: 1.5rem auto 0 auto;
+    font-size: clamp(var(--fs-sm), 2rem, var(--fs-md));
   }
 
   .project-page-header {
@@ -259,13 +264,26 @@
     width: 90%;
     text-align: center;
   }
+}
 
-  .heart {
-    width: 40px;
+@media (max-width: 480px) {
+  .project-page-container {
+    max-width: 100vw;
   }
 
-  .back-to-projects.bottom {
-    width: 90%;
-    margin: 2rem auto 3rem auto;
+  .project-page {
+    margin: 0;
+  }
+
+  .text-header {
+    margin: 0.8rem 0 0.4rem 0;
+  }
+
+  .section-header {
+    margin: 0.6rem 0 0.9rem 0;
+  }
+
+  .coming-soon {
+    font-size: 2.4rem;
   }
 }

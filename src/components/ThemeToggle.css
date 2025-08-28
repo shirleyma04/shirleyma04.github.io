@@ -5,15 +5,14 @@
   z-index: 9999;
   width: 70px;
   height: 35px;
-  background-color: #fabddc;
+  background-color: #df6fa7;
   border-radius: 30px;
-  cursor: pointer;
   padding: 3px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border: 2px solid #e488b9;
+  border: 2px solid #b64e85;
   transition: background-color 0.3s ease;
 }
 
@@ -30,9 +29,16 @@
   align-items: center;
   justify-content: center;
   font-size: 17px;
+  background: transparent;
+  border: none;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .theme-toggle-slider.dark {
   transform: translateX(30px);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--pink);
+  outline-offset: 4px;
 }

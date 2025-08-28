@@ -29,7 +29,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh; /* full screen */
+  height: 100vh;
   text-align: center;
   box-sizing: border-box;
   margin-top: 5rem;
@@ -41,7 +41,6 @@
   font-size: clamp(var(--fs-lg), 2.5vw, var(--fs-xl));
   color: var(--pink);
   animation: bounce 2.5s infinite;
-  cursor: pointer;
   margin-top: 2rem;
 }
 
@@ -65,7 +64,7 @@
   position: relative;
   width: min(80vw, 350px);
   aspect-ratio: 1/1;
-  margin: 0;
+  margin: 2rem auto;
   padding: 0;
 }
 
@@ -89,7 +88,7 @@
 
 .headshot {
   z-index: 2;
-  transform: translate(10%, -7%); /* offset bottom-right */
+  transform: translate(10%, -7%) scale(1.2); /* offset bottom-right */
   margin: 0;
   padding: 0;
 }

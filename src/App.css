@@ -3,12 +3,34 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  cursor: var(--cursor-pointer);
+}
+
+.inherit-cursor {
+  cursor: var(--cursor-finger);
 }
 
 .page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--maroon);
+  font-family: var(--chivo);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 .page-content {

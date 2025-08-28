@@ -22,12 +22,19 @@ export default function ThemeToggle() {
 
   return (
     <div
-      className={`theme-toggle-wrapper ${theme === "dark" ? "dark" : ""}`}
+      className={`theme-toggle-wrapper inherit-cursor ${
+        theme === "dark" ? "dark" : ""
+      }`}
       onClick={toggleTheme}
+      aria-label="Toggle light/dark theme"
     >
-      <div className={`theme-toggle-slider ${theme === "dark" ? "dark" : ""}`}>
+      <button
+        className={`theme-toggle-slider inherit-cursor ${
+          theme === "dark" ? "dark" : ""
+        }`}
+      >
         {theme === "light" ? "☀️" : "🌙"}
-      </div>
+      </button>
     </div>
   );
 }

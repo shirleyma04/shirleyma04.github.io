@@ -2,7 +2,7 @@
   background-color: transparent;
   margin: 0 auto 0 auto;
   width: 85vw;
-  padding: 0;
+  padding: 0 1rem;
 }
 
 .experience-title {
@@ -23,6 +23,7 @@
   width: 100%;
   height: 100%;
   margin-bottom: 2.5rem;
+  overflow: visible;
 }
 
 /* vary layout depending on number of projects */
@@ -50,6 +51,13 @@
   position: relative;
   height: auto;
   min-height: 350px;
+  transition: transform 0.2s ease-in;
+  will-change: transform;
+  padding: auto 3rem;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
 }
 
 .spotlight-overlay {
@@ -98,7 +106,6 @@
   font-size: 1.5rem;
   font-weight: light;
   border: 2px solid var(--pink);
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

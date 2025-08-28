@@ -7,4 +7,5 @@ html {
 .footer-bar {
   background: var(--pink);
   height: 30px;
+  z-index: 1;
 }

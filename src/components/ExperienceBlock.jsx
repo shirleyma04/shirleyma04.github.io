@@ -26,9 +26,12 @@ const ExperienceBlock = ({ title, projects }) => {
       <div className="experience-title">{title}</div>
       <div className={`project-row project-count-${projects.length}`}>
         {projects.map((project, idx) => (
-          <div
+          <button
             key={idx}
-            className="project-card"
+            className="project-card inherit-cursor"
+            onClick={() => {
+              navigate(`/projects/${slugify(project.name)}`);
+            }}
             style={{
               backgroundImage: project.image
                 ? `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${project.image})`
@@ -45,7 +48,7 @@ const ExperienceBlock = ({ title, projects }) => {
               <h3 className="project-title">{project.name}</h3>
               <p className="project-description">{project.description}</p>
               <button
-                className="circle-button"
+                className="circle-button inherit-cursor"
                 onClick={() => {
                   navigate(`/projects/${slugify(project.name)}`);
                 }}
@@ -53,7 +56,7 @@ const ExperienceBlock = ({ title, projects }) => {
                 {">"}
               </button>
             </SpotlightCard>
-          </div>
+          </button>
         ))}
       </div>
     </ScrollFloat>

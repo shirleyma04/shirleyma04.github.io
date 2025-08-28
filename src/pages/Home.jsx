@@ -102,7 +102,7 @@ export default function Home() {
             </p>
           </div>
           <div
-            className="scroll-indicator"
+            className="scroll-indicator inherit-cursor"
             onClick={() =>
               window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
             }

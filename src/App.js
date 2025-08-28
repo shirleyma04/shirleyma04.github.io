@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ProjectPage from "./pages/ProjectPage";
@@ -15,7 +14,6 @@ function App() {
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-
       <div className="background-gradient"></div>
       <ThemeToggle />
       <Header />

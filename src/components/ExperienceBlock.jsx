@@ -14,15 +14,10 @@ const ExperienceBlock = ({ title, projects }) => {
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-|-$/g, "");
 
-  return (
-    <ScrollFloat
-      containerClassName="experience-block"
-      animationDuration={1}
-      ease="back.inOut(2)"
-      scrollStart="center bottom+=50%"
-      scrollEnd="bottom bottom-=40%"
-      stagger={0.03}
-    >
+  const isMobile = window.innerWidth <= 768;
+
+  const content = (
+    <>
       <div className="experience-title">{title}</div>
       <div className={`project-row project-count-${projects.length}`}>
         {projects.map((project, idx) => (
@@ -60,6 +55,23 @@ const ExperienceBlock = ({ title, projects }) => {
           </button>
         ))}
       </div>
+    </>
+  );
+
+  if (isMobile) {
+    return <div className="experience-block">{content}</div>; // render static content on mobile
+  }
+
+  return (
+    <ScrollFloat
+      containerClassName="experience-block"
+      animationDuration={1}
+      ease="back.inOut(2)"
+      scrollStart="center bottom+=50%"
+      scrollEnd="bottom bottom-=40%"
+      stagger={0.03}
+    >
+      {content}
     </ScrollFloat>
   );
 };

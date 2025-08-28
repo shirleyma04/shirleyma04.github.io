@@ -53,7 +53,12 @@
     padding: 0 0 0.1rem 0;
   }
 
+  .theme-toggle-slider {
+    width: 1.5rem;
+    height: 1rem;
+  }
+
   .theme-toggle-slider.dark {
-    transform: translateX(17px);
+    transform: translateX(23px);
   }
 }

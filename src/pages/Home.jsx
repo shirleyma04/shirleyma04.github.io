@@ -82,6 +82,7 @@ export default function Home() {
               <BlurText
                 className="name"
                 text="Shirley Ma"
+                aria-label="Shirley Ma"
                 delay={55}
                 animateBy="letters"
                 direction="top"
@@ -98,7 +99,7 @@ export default function Home() {
               <strong className="bold-text">
                 combining technology and creativity
               </strong>{" "}
-              to design accessible solutions and and turn ideas into reality.
+              to design accessible solutions and turn ideas into reality.
             </p>
           </div>
           <div

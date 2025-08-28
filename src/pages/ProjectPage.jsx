@@ -16,6 +16,7 @@ const ProjectPage = () => {
         <BlurText
           className="blur-text"
           text="Project details coming soon..."
+          aria-label="Project details coming soon"
           delay={55}
           animateBy="letters"
           direction="top"
@@ -35,6 +36,7 @@ const ProjectPage = () => {
           <button
             className="back-to-projects inherit-cursor"
             onClick={() => navigate("/")}
+            aria-label="Back to projects"
           >
             {"<"}&nbsp;Back to projects
           </button>
@@ -86,9 +88,10 @@ const ProjectPage = () => {
         <hr className="line-decoration" />
         <button
           className="back-button inherit-cursor"
+          aria-label="Back to projects"
           onClick={() => navigate("/")}
         >
-          {"←"}&nbsp;Back To Projects
+          <span aria-hidden="true">←</span>&nbsp;Back to Projects
         </button>
       </nav>
 
@@ -144,6 +147,7 @@ const ProjectPage = () => {
                 loop
                 playsInlines
                 controls
+                muted
                 className={`media-item ${
                   item.type === "phone" ? "phone-media" : "web-media"
                 }`}

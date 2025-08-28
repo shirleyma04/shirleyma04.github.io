@@ -29,6 +29,7 @@ const ExperienceBlock = ({ title, projects }) => {
           <button
             key={idx}
             className="project-card inherit-cursor"
+            aria-label={`Click to open the project ${project.name} ${project.description}`}
             onClick={() => {
               navigate(`/projects/${slugify(project.name)}`);
             }}
@@ -47,14 +48,14 @@ const ExperienceBlock = ({ title, projects }) => {
             >
               <h3 className="project-title">{project.name}</h3>
               <p className="project-description">{project.description}</p>
-              <button
+              <span
                 className="circle-button inherit-cursor"
                 onClick={() => {
                   navigate(`/projects/${slugify(project.name)}`);
                 }}
               >
-                {">"}
-              </button>
+                &gt;
+              </span>
             </SpotlightCard>
           </button>
         ))}

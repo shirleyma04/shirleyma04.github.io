@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5fc5d645.css",
-    "main.js": "/static/js/main.964dc2c0.js",
+    "main.css": "/static/css/main.d6207a0b.css",
+    "main.js": "/static/js/main.6b45e137.js",
     "static/media/UIUCAuthenticatedLogin.png": "/static/media/UIUCAuthenticatedLogin.f5b3f7249720c4af5f38.png",
     "static/media/SavedRecipes.png": "/static/media/SavedRecipes.22be85c8645eda6a76cc.png",
     "static/media/coming-soon-bg.gif": "/static/media/coming-soon-bg.5f01ac00b549db8466cb.gif",
@@ -35,11 +35,11 @@
     "static/media/cursor-finger-dark.svg": "/static/media/cursor-finger-dark.6fd65092a4b29e8f2d6f.svg",
     "static/media/cursor-finger-light.svg": "/static/media/cursor-finger-light.c4cba11c6d23a01118d0.svg",
     "static/media/headshot-background.svg": "/static/media/headshot-background.fff7d4ddd27b521b1028e84065e92243.svg",
-    "main.5fc5d645.css.map": "/static/css/main.5fc5d645.css.map",
-    "main.964dc2c0.js.map": "/static/js/main.964dc2c0.js.map"
+    "main.d6207a0b.css.map": "/static/css/main.d6207a0b.css.map",
+    "main.6b45e137.js.map": "/static/js/main.6b45e137.js.map"
   },
   "entrypoints": [
-    "static/css/main.5fc5d645.css",
-    "static/js/main.964dc2c0.js"
+    "static/css/main.d6207a0b.css",
+    "static/js/main.6b45e137.js"
   ]
 }

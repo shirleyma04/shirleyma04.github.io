@@ -55,6 +55,9 @@ export default function Header() {
           <a
             href="mailto:shirleyma2004@gmail.com"
             aria-label="Send email to Shirley"
+            onClick={(e) => {
+              window.location.href = "mailto:shirleyma2004@gmail.com";
+            }}
           >
             <span className="icon">
               <EmailIcon />

@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import projects from "../data/projectData";
 import { ReactComponent as HeartIcon } from "../assets/heart.svg";
 import BlurText from "../animations/BlurText";
@@ -9,6 +10,51 @@ const ProjectPage = () => {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
   const navigate = useNavigate();
+
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    // Clear any hash from the URL first
+    if (window.location.hash) {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+
+    // Try multiple methods to ensure scrolling works
+    const scrollToTop = () => {
+      // Method 1: Simple scrollTo
+      window.scrollTo(0, 0);
+
+      // Method 2: Scroll with options
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant",
+      });
+
+      // Method 3: Scroll on document element
+      if (document.documentElement) {
+        document.documentElement.scrollTop = 0;
+      }
+
+      // Method 4: Scroll on body element
+      if (document.body) {
+        document.body.scrollTop = 0;
+      }
+    };
+
+    // Execute immediately
+    scrollToTop();
+
+    // Execute again after a small delay to handle any async rendering
+    const timer1 = setTimeout(scrollToTop, 10);
+    const timer2 = setTimeout(scrollToTop, 100);
+    const timer3 = setTimeout(scrollToTop, 300);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+    };
+  }, [slug]);
 
   if (!project)
     return (

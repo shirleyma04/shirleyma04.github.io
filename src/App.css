@@ -6,6 +6,7 @@ body {
   cursor: var(--cursor-pointer);
   overflow-x: hidden;
   max-width: 100%;
+  scroll-behavior: auto !important;
 }
 
 .inherit-cursor {

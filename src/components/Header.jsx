@@ -11,7 +11,7 @@ export default function Header() {
       <ul className="glow-menu">
         <li>
           <a
-            href="Ma_Shirley_Resume.pdf"
+            href={`${process.env.PUBLIC_URL}/Ma_Shirley_Resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open Resume in new tab"

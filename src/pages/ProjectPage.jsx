@@ -152,7 +152,7 @@ const ProjectPage = () => {
                 src={item.src}
                 autoPlay
                 loop
-                playsInlines
+                playsInline
                 controls
                 muted
                 className={`media-item ${

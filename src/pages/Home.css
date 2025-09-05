@@ -131,7 +131,7 @@
   text-align: center;
   justify-content: center;
   margin: 4rem auto 0 auto;
-  font-size: clamp(var(--fs-2xl), 6vw, var(--fs-3xl));
+  font-size: clamp(var(--fs-xl), 6vw, var(--fs-3xl));
   text-align: center;
 }
 
@@ -178,7 +178,7 @@
   display: flex;
   justify-content: center;
   margin: 4rem 0 6rem 0;
-  font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl));
+  font-size: clamp(var(--fs-xl), 4vw, var(--fs-3xl));
 }
 
 /* MEDIA QUERIES */
@@ -244,7 +244,7 @@
   }
 
   .name {
-    font-size: clamp(2rem, 5vw, var(--fs-4xl));
+    font-size: clamp(2.4rem, 5vw, var(--fs-4xl));
     margin-top: 0;
   }
 
@@ -262,7 +262,7 @@
   }
 
   .hobby-row {
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 1rem;
   }
 

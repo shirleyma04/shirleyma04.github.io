@@ -45,6 +45,7 @@
 /* MEDIA QUERY */
 @media (max-width: 480px) {
   .theme-toggle-wrapper {
+    top: auto;
     bottom: 20px;
     right: 20px;
     width: 3.3rem;

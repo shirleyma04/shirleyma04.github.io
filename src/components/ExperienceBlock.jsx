@@ -33,6 +33,7 @@ const ExperienceBlock = ({ logo, title, projects }) => {
           <button
             key={idx}
             className="project-card inherit-cursor"
+            aria-label={`Click to open the project ${project.name} ${project.description}`}
             onClick={() => {
               navigate(`/projects/${slugify(project.name)}`);
             }}
@@ -58,6 +59,23 @@ const ExperienceBlock = ({ logo, title, projects }) => {
           </button>
         ))}
       </div>
+    </>
+  );
+
+  if (isMobile) {
+    return <div className="experience-block">{content}</div>; // render static content on mobile
+  }
+
+  return (
+    <ScrollFloat
+      containerClassName="experience-block"
+      animationDuration={1}
+      ease="back.inOut(2)"
+      scrollStart="center bottom+=50%"
+      scrollEnd="bottom bottom-=40%"
+      stagger={0.03}
+    >
+      {content}
     </ScrollFloat>
   );
 };

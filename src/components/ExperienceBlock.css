@@ -154,6 +154,7 @@
   justify-content: center;
   transition: transform 0.2s ease;
   z-index: 3;
+  line-height: 2rem;
 }
 
 .circle-button:hover {
@@ -178,11 +179,12 @@
 
 @media (max-width: 600px) {
   .experience-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .project-card {
     border: 1.5px solid var(--pink);
+    min-height: 200px;
   }
 
   .project-title {

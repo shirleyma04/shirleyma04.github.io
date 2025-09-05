@@ -15,7 +15,7 @@
 .toc {
   flex: 0 0 220px;
   position: sticky;
-  top: 40%;
+  top: 9%;
   align-self: flex-start;
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@
 .back-button {
   background: none;
   border: none;
-  font-size: var(--fs-md);
+  font-size: clamp(var(--fs-xs), 1.5rem, var(--fs-2xl));
   font-family: var(--chivo);
   transition: color 0.3s, transform 0.2s;
   color: var(--pink);
@@ -68,15 +68,20 @@
   transform: translateX(5px);
 }
 
+.back-button.toc {
+  font-size: clamp(var(--fs-sm), 1rem, var(--fs-xl)) !important;
+}
+
+.back-button.mobile {
+  display: none;
+}
+
 .project-page {
   display: block;
   margin-right: 2rem;
   flex: 1;
   padding-bottom: 2rem;
   font-family: var(--chivo);
-}
-
-.project-page h3 {
   margin-bottom: 0.5rem;
   color: var(--black);
   text-indent: 1rem;
@@ -155,16 +160,18 @@
 .project-experience {
   color: var(--black);
   margin: 0.2rem !important;
+  font-size: clamp(var(--fs-xl), 1rem, var(--fs-3xl));
 }
 
 .project-name {
   color: var(--pink);
   margin: 0;
   text-align: center;
+  font-size: clamp(var(--fs-2xl), 1.2rem, var(--fs-5xl));
 }
 
 .line-break {
-  margin: 1.5rem 0 1rem 0;
+  margin: 1.5rem 0 0.2rem 0;
   border: none;
   border-top: 2px solid var(--pink);
   width: 100%;
@@ -187,8 +194,12 @@
 
 /* 
 .heart {
-  width: 45px;
-  margin-bottom: 0rem;
+  width: 2.4rem;
+  margin-bottom: 0;
+}
+
+.section-header h2 {
+  margin: 0;
 }
 
 .coming-soon {
@@ -202,7 +213,7 @@
   justify-content: center;
   align-items: center;
   gap: 0;
-  font-size: clamp(var(--fs-3xl), 5vw, var(--fs-4xl));
+  font-size: clamp(var(--fs-2xl), 5vw, var(--fs-4xl));
   font-family: var(--chivo);
   color: var(--pink);
   background-image: url("../assets/coming-soon-bg.gif");
@@ -215,24 +226,8 @@
   margin: 0 0 1.5rem 0;
   padding: 0;
   justify-content: center;
-}
-
-.back-to-projects {
-  color: var(--pink);
-  border: 2px solid var(--pink);
-  padding: 1rem 1.5rem;
-  font-family: var(--chivo);
-  font-weight: var(--fw-medium);
-  background: transparent;
-  border-radius: 20px 5px;
-  font-size: var(--fs-xl);
-  transition: transform 0.2s ease;
-}
-
-.back-to-projects:hover {
-  transform: scale(1.05);
-  background-color: var(--pink);
-  color: var(--white);
+  width: 90vw;
+  word-break: break-word;
 }
 
 /* MEDIA QUERIES */
@@ -262,13 +257,26 @@
     width: 90%;
     text-align: center;
   }
+}
 
-  .heart {
-    width: 40px;
+@media (max-width: 480px) {
+  .project-page-container {
+    max-width: 100vw;
   }
 
-  .back-to-projects.bottom {
-    width: 90%;
-    margin: 2rem auto 3rem auto;
+  .project-page {
+    margin: 0;
+  }
+
+  .text-header {
+    margin: 0.8rem 0 0.4rem 0;
+  }
+
+  .section-header {
+    margin: 0.6rem 0 0.9rem 0;
+  }
+
+  .coming-soon {
+    font-size: 2.4rem;
   }
 }

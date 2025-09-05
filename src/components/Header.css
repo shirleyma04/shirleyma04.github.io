@@ -3,25 +3,28 @@
   justify-content: center;
   align-items: center;
   background: var(--pink);
-  z-index: 1;
+  z-index: 9999 !important;
+  width: 100%;
 }
 
 .glow-menu {
   display: flex;
-  gap: 25px;
+  gap: 2.5rem;
   list-style: none;
+  flex-wrap: wrap;
+  padding-inline-start: 0;
 }
 
 .glow-menu li {
   position: relative;
-  width: 80px;
-  height: 60px;
-  border-radius: 60px;
+  width: 5rem;
+  height: 3.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 /* Gradient background + glow */
@@ -51,7 +54,8 @@
 
 /* Expand and glow on hover */
 .glow-menu li:hover {
-  width: 180px;
+  width: 8rem;
+  height: 3.5rem;
 }
 
 .glow-menu li:hover::before {
@@ -68,8 +72,8 @@
 }
 
 .glow-menu li .icon svg {
-  width: 35px;
-  height: 35px;
+  width: 2.5rem;
+  height: 2.5rem;
   transition: 0.5s;
   transition-delay: 0.25s;
 }
@@ -84,7 +88,7 @@
   position: absolute;
   color: var(--white);
   font-family: var(--chivo);
-  font-size: 1em;
+  font-size: var(--fs-sm);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   transform: scale(0);
@@ -110,4 +114,28 @@
 .glow-menu li a:focus {
   color: var(--maroon);
   transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .glow-menu {
+    gap: 0.35rem;
+  }
+
+  .glow-menu li {
+    width: 4rem;
+  }
+
+  .glow-menu li .icon svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .glow-menu li:hover {
+    width: 5.5rem;
+    height: 3rem;
+  }
+
+  .glow-menu li .title {
+    font-size: var(--fs-xs);
+  }
 }

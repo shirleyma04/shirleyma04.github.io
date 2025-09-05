@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import projects from "../data/projectData";
 import { ReactComponent as HeartIcon } from "../assets/heart.svg";
 import BlurText from "../animations/BlurText";
@@ -10,12 +11,58 @@ const ProjectPage = () => {
   const project = projects.find((p) => p.slug === slug);
   const navigate = useNavigate();
 
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    // Clear any hash from the URL first
+    if (window.location.hash) {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+
+    // Try multiple methods to ensure scrolling works
+    const scrollToTop = () => {
+      // Method 1: Simple scrollTo
+      window.scrollTo(0, 0);
+
+      // Method 2: Scroll with options
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant",
+      });
+
+      // Method 3: Scroll on document element
+      if (document.documentElement) {
+        document.documentElement.scrollTop = 0;
+      }
+
+      // Method 4: Scroll on body element
+      if (document.body) {
+        document.body.scrollTop = 0;
+      }
+    };
+
+    // Execute immediately
+    scrollToTop();
+
+    // Execute again after a small delay to handle any async rendering
+    const timer1 = setTimeout(scrollToTop, 10);
+    const timer2 = setTimeout(scrollToTop, 100);
+    const timer3 = setTimeout(scrollToTop, 300);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+    };
+  }, [slug]);
+
   if (!project)
     return (
       <div className="coming-soon">
         <BlurText
           className="blur-text"
           text="Project details coming soon..."
+          aria-label="Project details coming soon"
           delay={55}
           animateBy="letters"
           direction="top"
@@ -33,10 +80,11 @@ const ProjectPage = () => {
           delay={0.7}
         >
           <button
-            className="back-to-projects inherit-cursor"
+            className="back-button inherit-cursor"
             onClick={() => navigate("/")}
+            aria-label="Back to projects"
           >
-            {"<"}&nbsp;Back to projects
+            &larr;&nbsp;Back to projects
           </button>
         </AnimatedContent>
       </div>
@@ -66,7 +114,7 @@ const ProjectPage = () => {
       <nav className="toc">
         <h3 className="toc-title">Table Of Contents</h3>
         <hr className="line-decoration" />
-        <ul>
+        <ul className="list">
           <li>
             <a className="toc-link inherit-cursor" href="#overview">
               Overview
@@ -90,10 +138,11 @@ const ProjectPage = () => {
         </ul>
         <hr className="line-decoration" />
         <button
-          className="back-button inherit-cursor"
+          className="back-button toc inherit-cursor"
+          aria-label="Back to projects"
           onClick={() => navigate("/")}
         >
-          {"←"}&nbsp;Back To Projects
+          &larr;&nbsp;Back to Projects
         </button>
       </nav> */}
 
@@ -118,10 +167,10 @@ const ProjectPage = () => {
           {/* <HeartIcon className="heart" /> */}
           <h2 className="section-header-text">Overview</h2>
         </div>
-        <h3>Problem Statement</h3>
-        <p>{project.problem}</p>
-        <h3>Provided Solution</h3>
-        <p>{project.solution}</p>
+        <h3 className="text-header">Problem Statement</h3>
+        <p className="text">{project.problem}</p>
+        <h3 className="text-header">Provided Solution</h3>
+        <p className="text">{project.solution}</p>
 
         <hr className="line-break" />
         <div className="section-header" id="details">
@@ -135,11 +184,11 @@ const ProjectPage = () => {
           ))}
         </ul>
 
-        <h3>Timeline</h3>
-        <p>{project.timeline}</p>
+        <h3 className="text-header">Timeline</h3>
+        <p className="text">{project.timeline}</p>
 
-        <h3>Technologies</h3>
-        <ul>
+        <h3 className="text-header">Technologies</h3>
+        <ul className="list">
           {project.tech.map((tech, idx) => (
             <li key={idx}>{tech}</li>
           ))}
@@ -159,7 +208,7 @@ const ProjectPage = () => {
                 src={item.src}
                 autoPlay
                 loop
-                playsInlines
+                playsInline
                 controls
                 muted
                 className={`media-item ${
@@ -189,8 +238,8 @@ const ProjectPage = () => {
         </div>
         {project.takeawayTitles.map((title, idx) => (
           <div key={idx}>
-            <h3>{title}</h3>
-            <p>
+            <h3 className="text-header">{title}</h3>
+            <p className="text">
               {highlightText(
                 project.takeaways[idx],
                 project.highlightedWords[idx]
@@ -198,6 +247,13 @@ const ProjectPage = () => {
             </p>
           </div>
         ))}
+        <button
+          className="back-button mobile inherit-cursor"
+          aria-label="Back to projects"
+          onClick={() => navigate("/")}
+        >
+          ← Back to Projects
+        </button>
       </div>
     </div>
   );

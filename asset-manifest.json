@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.da837a1a.css",
+    "main.css": "/static/css/main.a4b1706b.css",
     "main.js": "/static/js/main.38d68043.js",
     "static/media/UIUCAuthenticatedLogin.png": "/static/media/UIUCAuthenticatedLogin.f5b3f7249720c4af5f38.png",
     "static/media/SavedRecipes.png": "/static/media/SavedRecipes.22be85c8645eda6a76cc.png",
@@ -50,11 +50,11 @@
     "index.html": "/index.html",
     "static/media/cursor-finger-light.svg": "/static/media/cursor-finger-light.c4cba11c6d23a01118d0.svg",
     "static/media/headshot-background.svg": "/static/media/headshot-background.82d739d1bd9b4e79b64a1fa0cb579b61.svg",
-    "main.da837a1a.css.map": "/static/css/main.da837a1a.css.map",
+    "main.a4b1706b.css.map": "/static/css/main.a4b1706b.css.map",
     "main.38d68043.js.map": "/static/js/main.38d68043.js.map"
   },
   "entrypoints": [
-    "static/css/main.da837a1a.css",
+    "static/css/main.a4b1706b.css",
     "static/js/main.38d68043.js"
   ]
 }

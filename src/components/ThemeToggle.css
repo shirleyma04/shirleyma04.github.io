@@ -5,14 +5,14 @@
   z-index: 9999;
   width: 70px;
   height: 35px;
-  background-color: #f894c6;
+  background-color: #dd79ab;
   border-radius: 30px;
   padding: 0.1rem 0.1rem 0.2rem 0.1rem;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border: 1.5px solid #6d183a;
+  border: 2px solid #a33460;
   transition: background-color 0.3s ease;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .theme-toggle-slider.dark {
-  transform: translateX(1.5rem);
+  transform: translateX(1.8rem);
 }
 
 .theme-toggle:focus {

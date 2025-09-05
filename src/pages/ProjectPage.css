@@ -56,7 +56,7 @@
 .back-button {
   background: none;
   border: none;
-  font-size: clamp(var(--fs-xs), 1.5rem, var(--fs-2xl));
+  font-size: clamp(var(--fs-sm), 1rem, var(--fs-lg));
   font-family: var(--chivo);
   transition: color 0.3s, transform 0.2s;
   color: var(--pink);
@@ -68,9 +68,10 @@
   transform: translateX(5px);
 }
 
+/* 
 .back-button.toc {
   font-size: clamp(var(--fs-sm), 1rem, var(--fs-xl)) !important;
-}
+} */
 
 .back-button.mobile {
   display: none;
@@ -84,15 +85,19 @@
   font-family: var(--chivo);
   margin-bottom: 0.5rem;
   color: var(--black);
+}
+
+.project-page h3 {
   text-indent: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-page p {
   text-indent: 2.5rem;
   margin-top: 0;
-  line-height: 1.5;
-  color: var(--black);
   line-height: 1.5rem;
+  color: var(--black);
+  text-indent: 2rem;
 }
 
 .project-page ul {
@@ -189,7 +194,7 @@
 }
 
 .section-header-text {
-  margin: 0;
+  margin: 1rem 0;
 }
 
 /* 

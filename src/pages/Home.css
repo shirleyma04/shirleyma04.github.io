@@ -244,12 +244,12 @@
   }
 
   .name {
-    font-size: clamp(2.4rem, 5vw, var(--fs-4xl));
+    font-size: clamp(2rem, 5vw, var(--fs-4xl));
     margin-top: 0;
   }
 
   .subtitle {
-    font-size: clamp(1.5rem, 4vw, var(--fs-xl));
+    font-size: clamp(1.3rem, 4vw, var(--fs-xl));
   }
 
   .bio {

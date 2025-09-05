@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   background: var(--pink);
-  z-index: 9999 !important;
+  z-index: 9998 !important;
   width: 100%;
 }
 

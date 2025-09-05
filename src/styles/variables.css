@@ -8,7 +8,7 @@
 
   /* Fonts */
   --chivo: "Chivo", sans-serif;
-  --lora: "Lora", serif;
+  /* --lora: "Lora", serif; */
 
   /* Font Sizes */
   --fs-xs: 0.75rem; /* 12px */
@@ -21,6 +21,7 @@
   --fs-3xl: 3rem; /* 48px */
   --fs-4xl: 4rem;
   --fs-5xl: 6rem;
+  --fs-6xl: 7rem;
 
   /* Font Weights */
   --fw-light: 300;

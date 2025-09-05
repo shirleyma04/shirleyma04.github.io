@@ -1,24 +1,23 @@
 .theme-toggle-wrapper {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  top: 30px;
+  right: 50px;
   z-index: 9999;
   width: 70px;
   height: 35px;
-  background-color: #df6fa7;
+  background-color: #f894c6;
   border-radius: 30px;
   padding: 3px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border: 2px solid #b64e85;
+  border: 1.5px solid #6d183a;
   transition: background-color 0.3s ease;
 }
 
 .theme-toggle-wrapper.dark {
   background-color: #ac2f61;
-  border: 2px solid #6d183a;
 }
 
 .theme-toggle-slider {

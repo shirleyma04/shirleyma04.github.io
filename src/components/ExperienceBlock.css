@@ -5,14 +5,24 @@
   padding: 0 1rem;
 }
 
+.experience-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.experience-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 .experience-title {
   font-weight: var(--fw-light);
-  font-family: var(--lora);
-  font-size: clamp(var(--fs-xl), var(--fs-2xl), var(--fs-2-5xl));
+  font-family: var(--chivo);
+  font-size: clamp(var(--fs-2xl), 4vw, var(--fs-2-5xl));
   color: var(--pink);
-  text-align: center;
-  margin-bottom: 1rem;
-  margin-top: 0;
 }
 
 .project-row {
@@ -22,7 +32,7 @@
   gap: 2rem;
   width: 100%;
   height: 100%;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4.5rem;
   overflow: visible;
 }
 
@@ -49,6 +59,7 @@
   justify-content: center;
   text-align: center;
   position: relative;
+  overflow: hidden;
   height: auto;
   min-height: 350px;
   transition: transform 0.2s ease-in;
@@ -58,6 +69,38 @@
 
 .project-card:hover {
   transform: scale(1.02);
+}
+
+/* blurred background image */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--project-bg, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+/* gradient overlay on top of blurred bg */
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 231, 248, 0.6)
+  );
+  z-index: 1;
+}
+
+/* actual content stays sharp */
+.project-card > * {
+  position: relative;
+  z-index: 2;
 }
 
 .spotlight-overlay {

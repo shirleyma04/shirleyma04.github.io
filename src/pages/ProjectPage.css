@@ -1,11 +1,11 @@
 .project-page-container {
   display: flex;
-  max-width: 85vw;
+  max-width: 65vw;
   margin: 2rem auto;
 }
 
 /* Sidebar TOC */
-.line-decoration {
+/* .line-decoration {
   margin: 0.5rem 0 0.2rem 0;
   border: none;
   border-top: 2px solid var(--pink);
@@ -19,7 +19,7 @@
   align-self: flex-start;
   display: flex;
   flex-direction: column;
-  font-family: var(--lora);
+  font-family: var(--chivo);
 }
 
 .toc-title {
@@ -51,6 +51,7 @@
   color: var(--pink);
   transform: translateX(5px);
 }
+*/
 
 .back-button {
   background: none;
@@ -59,8 +60,6 @@
   font-family: var(--chivo);
   transition: color 0.3s, transform 0.2s;
   color: var(--pink);
-  display: flex;
-  flex-direction: flex-start;
   margin-top: 0.2rem;
 }
 
@@ -74,23 +73,26 @@
   margin-right: 2rem;
   flex: 1;
   padding-bottom: 2rem;
-}
-
-.project-page h3,
-.project-page p,
-.project-page ul {
   font-family: var(--chivo);
 }
 
 .project-page h3 {
   margin-bottom: 0.5rem;
   color: var(--black);
+  text-indent: 1rem;
 }
 
-.project-page p,
-.project-page ul {
+.project-page p {
+  text-indent: 2.5rem;
   margin-top: 0;
   line-height: 1.5;
+  color: var(--black);
+  line-height: 1.5rem;
+}
+
+.project-page ul {
+  margin: 0 0 0 1rem;
+  line-height: 1.6rem;
   color: var(--black);
 }
 
@@ -145,7 +147,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  font-family: var(--lora);
+  font-family: var(--chivo);
   font-weight: var(--fw-regular);
   width: 60%;
 }
@@ -169,21 +171,21 @@
 }
 
 .section-header {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.5rem; */
   color: var(--pink);
-  font-family: var(--lora);
+  font-family: var(--chivo);
   font-weight: var(--fw-light);
   font-size: clamp(var(--fs-sm), 4vw, var(--fs-lg));
 }
 
-.project-page h2 {
-  margin: 0.5rem;
-  color: var(--black);
+.section-header-text {
+  margin: 0;
 }
 
+/* 
 .heart {
   width: 45px;
   margin-bottom: 0rem;
@@ -207,7 +209,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
+} */
 
 .blur-text {
   margin: 0 0 1.5rem 0;
@@ -238,14 +240,15 @@
   .project-page-container {
     flex-direction: column;
     padding: 1rem;
+    max-width: 85vw;
   }
 
-  .toc {
+  /* .toc {
     position: relative;
     flex: unset;
     width: 100%;
     top: unset;
-  }
+  } */
 
   .project-page-header {
     flex-direction: column;

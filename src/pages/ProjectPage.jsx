@@ -62,14 +62,19 @@ const ProjectPage = () => {
 
   return (
     <div className="project-page-container">
-      {/* Sidebar TOC */}
+      {/* Sidebar TOC
       <nav className="toc">
         <h3 className="toc-title">Table Of Contents</h3>
         <hr className="line-decoration" />
         <ul>
           <li>
             <a className="toc-link inherit-cursor" href="#overview">
-              Project Overview
+              Overview
+            </a>
+          </li>
+          <li>
+            <a className="toc-link inherit-cursor" href="#details">
+              Details
             </a>
           </li>
           <li>
@@ -90,10 +95,17 @@ const ProjectPage = () => {
         >
           {"←"}&nbsp;Back To Projects
         </button>
-      </nav>
+      </nav> */}
 
       {/* Main content */}
+
       <div className="project-page">
+        <button
+          className="back-button inherit-cursor"
+          onClick={() => navigate("/")}
+        >
+          {"←"}&nbsp;Back To Projects
+        </button>
         <div className="project-page-header">
           <div className="project-page-header-text">
             <h2 className="project-experience">{project.experience}</h2>
@@ -103,14 +115,19 @@ const ProjectPage = () => {
 
         <hr className="line-break" />
         <div className="section-header" id="overview">
-          <HeartIcon className="heart" />
-          <h2>Project Overview</h2>
+          {/* <HeartIcon className="heart" /> */}
+          <h2 className="section-header-text">Overview</h2>
         </div>
         <h3>Problem Statement</h3>
         <p>{project.problem}</p>
         <h3>Provided Solution</h3>
         <p>{project.solution}</p>
 
+        <hr className="line-break" />
+        <div className="section-header" id="details">
+          {/* <HeartIcon className="heart" /> */}
+          <h2 className="section-header-text">Details</h2>
+        </div>
         <h3>Team</h3>
         <ul>
           {project.team.map((member, idx) => (
@@ -130,8 +147,8 @@ const ProjectPage = () => {
 
         <hr className="line-break" />
         <div className="section-header" id="product">
-          <HeartIcon className="heart" />
-          <h2>Product</h2>
+          {/* <HeartIcon className="heart" /> */}
+          <h2 className="section-header-text">Product</h2>
         </div>
 
         <div className="media-grid">
@@ -144,6 +161,7 @@ const ProjectPage = () => {
                 loop
                 playsInlines
                 controls
+                muted
                 className={`media-item ${
                   item.type === "phone" ? "phone-media" : "web-media"
                 }`}
@@ -166,8 +184,8 @@ const ProjectPage = () => {
 
         <hr className="line-break" />
         <div className="section-header" id="takeaways">
-          <HeartIcon className="heart" />
-          <h2>Takeaways</h2>
+          {/* <HeartIcon className="heart" /> */}
+          <h2 className="section-header-text">Takeaways</h2>
         </div>
         {project.takeawayTitles.map((title, idx) => (
           <div key={idx}>

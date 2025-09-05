@@ -1,0 +1,146 @@
+.hobby-popup {
+  background: var(--white);
+  border: 1.5px solid var(--pink);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 2rem auto 0 auto;
+  overflow: hidden;
+  position: relative;
+  transform-origin: top center;
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pop-in with extra smooth bounce */
+.pop-in-bounce {
+  animation: popIn 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+/* Pop-out with gentle bounce */
+.pop-out-bounce {
+  animation: popOut 0.55s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  85% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  60% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+}
+
+.hobby-popup-title {
+  font-size: clamp(var(--fs-xl), 2.5vw, var(--fs-2xl));
+  font-family: var(--chivo);
+  margin: 0.5rem auto;
+  color: var(--black);
+}
+
+.hobby-popup-description {
+  font-size: clamp(var(--fs-md), 1.5vw, var(--fs-lg));
+  font-family: var(--chivo);
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  width: 55vw;
+  line-height: 1.8rem;
+  color: var(--black);
+}
+
+.bold-text {
+  font-weight: var(--fw-bold);
+  color: var(--pink);
+}
+
+.hobby-popup-images {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  width: 55vw;
+  margin: 0 auto 1.3rem auto;
+  flex-direction: row;
+}
+
+.hobby-popup-image {
+  max-width: 30%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.hobby-back-button {
+  color: var(--pink);
+  padding: 0.5rem 1.5rem;
+  width: 7rem;
+  font-family: var(--chivo);
+  background: transparent;
+  border-radius: 15px;
+  font-size: clamp(var(--fs-md), 1.5vw, var(--fs-xl)) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  margin: 0 auto;
+  border: transparent;
+}
+
+.hobby-back-button:hover {
+  transform: scale(1.05);
+  background-color: var(--pink);
+  color: var(--black);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 900px) {
+  .hobby-popup {
+    padding: 1rem 0;
+    width: 75vw;
+  }
+  .hobby-popup-description {
+    line-height: 1.5rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .hobby-popup {
+    padding: 1rem;
+  }
+  .hobby-popup-images {
+    gap: 0.5rem;
+    width: 70vw;
+  }
+  .hobby-popup-description {
+    width: auto;
+  }
+}

@@ -29,10 +29,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
+  /* height: 100vh; */
   text-align: center;
   box-sizing: border-box;
-  margin-top: 5rem;
+  margin: 5rem 0;
 }
 
 .scroll-indicator {
@@ -102,16 +102,16 @@
 
 .name {
   display: flex;
-  font-family: var(--lora);
+  font-family: var(--chivo);
   font-weight: var(--fw-light);
   margin: 0 auto;
   text-align: center;
-  font-size: clamp(var(--fs-2-5xl), 5vw, var(--fs-4xl));
+  font-size: clamp(var(--fs-2-5xl), 8vw, var(--fs-6xl));
   color: var(--black);
 }
 
 .subtitle {
-  font-family: var(--lora);
+  font-family: var(--chivo);
   color: var(--gray);
   font-weight: var(--fw-light);
   margin: 0 auto;
@@ -141,6 +141,7 @@
   justify-content: center;
   margin: 4rem auto 0 auto;
   font-size: clamp(var(--fs-2xl), 6vw, var(--fs-3xl));
+  text-align: ce;
 }
 
 .hobby-row {
@@ -156,6 +157,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.hobby-component:hover {
+  transform: scale(1.1);
 }
 
 .hobby-emoji {
@@ -164,7 +170,7 @@
   margin-bottom: 0;
   color: var(--pink);
   font-weight: var(--fw-light);
-  font-family: var(--lora);
+  font-family: var(--chivo);
 }
 
 .hobby-text {
@@ -180,7 +186,7 @@
   font-weight: var(--fw-light);
   display: flex;
   justify-content: center;
-  margin: 5rem 0 6rem 0;
+  margin: 4rem 0 6rem 0;
   font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl));
 }
 

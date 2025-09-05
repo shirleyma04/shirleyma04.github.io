@@ -2,10 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import SpotlightCard from "../animations/SpotlightCard";
 import ScrollFloat from "../animations/ScrollFloat";
-
 import "./ExperienceBlock.css";
 
-const ExperienceBlock = ({ title, projects }) => {
+const ExperienceBlock = ({ logo, title, projects }) => {
   const navigate = useNavigate();
 
   const slugify = (title) =>
@@ -23,7 +22,12 @@ const ExperienceBlock = ({ title, projects }) => {
       scrollEnd="bottom bottom-=40%"
       stagger={0.03}
     >
-      <div className="experience-title">{title}</div>
+      <div className="experience-header">
+        {logo ? (
+          <img src={logo} alt="Company Logo" className="experience-logo" />
+        ) : null}
+        <div className="experience-title">{title}</div>
+      </div>
       <div className={`project-row project-count-${projects.length}`}>
         {projects.map((project, idx) => (
           <button
@@ -33,12 +37,7 @@ const ExperienceBlock = ({ title, projects }) => {
               navigate(`/projects/${slugify(project.name)}`);
             }}
             style={{
-              backgroundImage: project.image
-                ? `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${project.image})`
-                : "none",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
+              "--project-bg": project.image ? `url(${project.image})` : "none",
             }}
           >
             <SpotlightCard
@@ -47,14 +46,14 @@ const ExperienceBlock = ({ title, projects }) => {
             >
               <h3 className="project-title">{project.name}</h3>
               <p className="project-description">{project.description}</p>
-              <button
+              {/* <button
                 className="circle-button inherit-cursor"
                 onClick={() => {
                   navigate(`/projects/${slugify(project.name)}`);
                 }}
               >
                 {">"}
-              </button>
+              </button> */}
             </SpotlightCard>
           </button>
         ))}

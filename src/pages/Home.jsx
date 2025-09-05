@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, React } from "react";
 import ExperienceBlock from "../components/ExperienceBlock";
 import { ReactComponent as HeadshotBackground } from "../assets/headshot-background.svg";
 import BlurText from "../animations/BlurText";
@@ -7,11 +7,16 @@ import miniProjectImg from "../assets/Mini-Project/StartScreen.png";
 import finnImg from "../assets/Finn/OLGAXInvestingSteps.png";
 import fridge2ForkImg from "../assets/Fridge2Fork/StartScreen.png";
 import languageExchangeImg from "../assets/UIUCLanguageExchange/StartScreen.png";
+import psLogo from "../assets/ps-logo.png";
+import uiucLogo from "../assets/uiuc-logo.png";
+import hobbies from "../data/hobbyData";
+import HobbyPopup from "../components/HobbyPopup";
 import "./Home.css";
 
 const experienceData = [
   {
     title: "Publicis Sapient",
+    logo: psLogo,
     projects: [
       {
         name: "Mini-Project",
@@ -27,6 +32,7 @@ const experienceData = [
   },
   {
     title: "School Projects",
+    logo: uiucLogo,
     projects: [
       {
         name: "Fridge2Fork",
@@ -40,19 +46,21 @@ const experienceData = [
       },
     ],
   },
-  {
-    title: "GE Appliances",
-    projects: [
-      {
-        name: "Data Governance & Master Data Management",
-        description: "Coming Soon...",
-        image: null,
-      },
-    ],
-  },
+  // {
+  //   title: "GE Appliances",
+  //   projects: [
+  //     {
+  //       name: "Data Governance & Master Data Management",
+  //       description: "Coming Soon...",
+  //       image: null,
+  //     },
+  //   ],
+  // },
 ];
 
 export default function Home() {
+  const [selectedHobby, setSelectedHobby] = useState(null);
+
   return (
     <div>
       <div className="home-container">
@@ -68,20 +76,20 @@ export default function Home() {
             scale={1}
             delay={0.3}
           >
-            <div className="headshot-container">
-              <HeadshotBackground className="headshot-bg" />
+            {/* <div className="headshot-container"> */}
+            {/* <HeadshotBackground className="headshot-bg" />
               <img
                 className="headshot"
                 src="/headshot-with-shadow.png"
                 alt="Headshot"
               />
-            </div>
+            </div> */}
           </AnimatedContent>
           <div className="home-text-container">
             <h1 className="name">
               <BlurText
                 className="name"
-                text="Shirley Ma"
+                text="Hi, I'm Shirley!"
                 delay={55}
                 animateBy="letters"
                 direction="top"
@@ -89,63 +97,91 @@ export default function Home() {
             </h1>
             <h2 className="subtitle">Software Engineer & Student</h2>
             <p className="bio">
-              Hi there! I'm a{" "}
+              I'm a{" "}
               <strong className="bold-text">
                 Computer Science + Advertising
               </strong>{" "}
               major at the University of Illinois at Urbana-Champaign,
-              graduating in May 2026. I’m passionate about{" "}
-              <strong className="bold-text">
-                combining technology and creativity
-              </strong>{" "}
-              to design accessible solutions and and turn ideas into reality.
+              graduating May 2026. I combine{" "}
+              <strong className="bold-text">technology and creativity</strong>{" "}
+              to design accessible solutions and turn ideas into reality.
             </p>
           </div>
-          <div
+          {/* <div
             className="scroll-indicator inherit-cursor"
             onClick={() =>
               window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
             }
           >
             ⬇ View projects ⬇
-          </div>
+          </div> */}
         </div>
       </div>
 
       {experienceData.map((exp, i) => (
-        <ExperienceBlock key={i} title={exp.title} projects={exp.projects} />
+        <ExperienceBlock
+          key={i}
+          logo={exp.logo}
+          title={exp.title}
+          projects={exp.projects}
+        />
       ))}
 
       <div>
-        <h1 className="hobby-header">In my spare time, I also enjoy:</h1>
-        <div className="hobby-row">
-          <div className="hobby-component">
-            <p className="hobby-emoji">📖</p>
-            <p className="hobby-text">Reading</p>
-          </div>
-          <div className="hobby-component">
-            <p className="hobby-emoji">🧶</p>
-            <p className="hobby-text">Crocheting</p>
-          </div>
-          <div className="hobby-component">
-            <p className="hobby-emoji">🎮</p>
-            <p className="hobby-text">Gaming</p>
-          </div>
+        <div className="hobby-section">
+          <h1 className="hobby-header">In my spare time, I also enjoy:</h1>
+
+          {!selectedHobby ? (
+            <>
+              {/* Top row */}
+              <div className="hobby-row">
+                {hobbies.slice(0, 3).map((hobby, idx) => (
+                  <div
+                    key={idx}
+                    className="hobby-component inherit-cursor"
+                    onClick={() => setSelectedHobby(hobby)}
+                  >
+                    <p className="hobby-emoji">{hobby.emoji}</p>
+                    <p className="hobby-text">{hobby.title}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom row */}
+              <div className="hobby-row">
+                {/* First hobby */}
+                <div
+                  className="hobby-component inherit-cursor"
+                  onClick={() => setSelectedHobby(hobbies[3])}
+                >
+                  <p className="hobby-emoji">{hobbies[3].emoji}</p>
+                  <p className="hobby-text">{hobbies[3].title}</p>
+                </div>
+
+                {/* Middle & */}
+                <div>
+                  <p className="hobby-emoji">&</p>
+                </div>
+
+                {/* Last hobby */}
+                <div
+                  className="hobby-component inherit-cursor"
+                  onClick={() => setSelectedHobby(hobbies[4])}
+                >
+                  <p className="hobby-emoji">{hobbies[4].emoji}</p>
+                  <p className="hobby-text">{hobbies[4].title}</p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <HobbyPopup
+              hobby={selectedHobby}
+              onClose={() => setSelectedHobby(null)}
+            />
+          )}
+
+          <h1 className="thanks">Thanks for visiting!</h1>
         </div>
-        <div className="hobby-row">
-          <div className="hobby-component">
-            <p className="hobby-emoji">🏊‍♀️</p>
-            <p className="hobby-text">Swimming</p>
-          </div>
-          <div className="hobby-component">
-            <p className="hobby-emoji">&</p>
-          </div>
-          <div className="hobby-component">
-            <p className="hobby-emoji">🍪</p>
-            <p className="hobby-text">Baking</p>
-          </div>
-        </div>
-        <h1 className="thanks">Thanks for visiting!</h1>
       </div>
     </div>
   );

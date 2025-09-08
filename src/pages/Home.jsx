@@ -136,27 +136,31 @@ export default function Home() {
               {/* Top row */}
               <div className="hobby-row">
                 {hobbies.slice(0, 3).map((hobby, idx) => (
-                  <div
+                  <button
                     key={idx}
                     className="hobby-component inherit-cursor"
                     onClick={() => setSelectedHobby(hobby)}
                   >
-                    <p className="hobby-emoji">{hobby.emoji}</p>
+                    <p className="hobby-emoji" aria-hidden="true">
+                      {hobby.emoji}
+                    </p>
                     <p className="hobby-text">{hobby.title}</p>
-                  </div>
+                  </button>
                 ))}
               </div>
 
               {/* Bottom row */}
               <div className="hobby-row">
                 {/* First hobby */}
-                <div
+                <button
                   className="hobby-component inherit-cursor"
                   onClick={() => setSelectedHobby(hobbies[3])}
                 >
-                  <p className="hobby-emoji">{hobbies[3].emoji}</p>
+                  <p className="hobby-emoji" aria-hidden="true">
+                    {hobbies[3].emoji}
+                  </p>
                   <p className="hobby-text">{hobbies[3].title}</p>
-                </div>
+                </button>
 
                 {/* Middle & */}
                 <div>
@@ -164,13 +168,15 @@ export default function Home() {
                 </div>
 
                 {/* Last hobby */}
-                <div
+                <button
                   className="hobby-component inherit-cursor"
                   onClick={() => setSelectedHobby(hobbies[4])}
                 >
-                  <p className="hobby-emoji">{hobbies[4].emoji}</p>
+                  <p className="hobby-emoji" aria-hidden="true">
+                    {hobbies[4].emoji}
+                  </p>
                   <p className="hobby-text">{hobbies[4].title}</p>
-                </div>
+                </button>
               </div>
             </>
           ) : (

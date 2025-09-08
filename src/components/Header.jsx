@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { ReactComponent as GitHubIcon } from "../assets/github.svg";
 import { ReactComponent as LinkedInIcon } from "../assets/linkedin.svg";
@@ -6,6 +6,16 @@ import { ReactComponent as EmailIcon } from "../assets/email.svg";
 import { ReactComponent as ResumeIcon } from "../assets/resume.svg";
 
 export default function Header() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("shirleyma2004@gmail.com");
+    setCopied(true);
+
+    // Reset after 2 seconds
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="header-bar">
       <ul className="glow-menu">
@@ -52,17 +62,13 @@ export default function Header() {
         </li>
 
         <li>
-          <a
-            href="mailto:shirleyma2004@gmail.com"
-            aria-label="Send email to Shirley"
-            onClick={(e) => {
-              window.location.href = "mailto:shirleyma2004@gmail.com";
-            }}
-          >
+          <a onClick={handleCopy} aria-label="Copy Shirley’s email">
             <span className="icon">
               <EmailIcon />
             </span>
-            <span className="title inherit-cursor">Email</span>
+            <span className="title inherit-cursor">
+              {copied ? "Copied!" : "Email"}
+            </span>
           </a>
         </li>
       </ul>

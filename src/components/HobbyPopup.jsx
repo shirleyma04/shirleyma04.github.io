@@ -111,8 +111,9 @@ const HobbyPopup = ({ hobby, onClose }) => {
           <button
             className="hobby-back-button inherit-cursor"
             onClick={onClose}
+            aria-label="Back button"
           >
-            {"<"}&nbsp;Back
+            &lt;&nbsp;Back
           </button>
         </motion.div>
       )}

@@ -152,6 +152,7 @@ const ProjectPage = () => {
         <button
           className="back-button inherit-cursor"
           onClick={() => navigate("/")}
+          aria-label="Back to projects"
         >
           {"←"}&nbsp;Back To Projects
         </button>
